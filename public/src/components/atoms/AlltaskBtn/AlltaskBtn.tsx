@@ -1,13 +1,12 @@
 import React, { VFC, useState, useEffect, useContext } from 'react';
 import styles from './AllTaskBtn.module.scss';
 
-const AlltaskBtn: VFC = () => {
+const AllTaskBtn: VFC = () => {
   return (
-    <div className={styles.allTask}>
-      <label>AllTask</label>
-      <input type="radio" id="task_tabs" />
+    <div className={styles.task}>
+      <p className={styles.title}>AllTask</p>
     </div>
   );
 };
 
-export default AlltaskBtn;
+export default AllTaskBtn;

@@ -1,9 +1,12 @@
-import React, { VFC } from 'react';
+import React, { VFC, useState, useEffect, useContext } from 'react';
+import styles from './MyTaskBtn.module.scss';
 
-const MytaskBtn = () => {
+const MyTaskBtn: VFC = () => {
   return (
-    <>
-      <div></div>
-    </>
+    <div className={styles.task}>
+      <p className={styles.title}>MyTask</p>
+    </div>
   );
 };
+
+export default MyTaskBtn;

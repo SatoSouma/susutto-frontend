@@ -1,10 +1,11 @@
 import React, { VFC } from 'react';
-import { Employee } from '../public/src/components/entory_point';
+import { NextPage } from 'next';
+import { EmployeeTemplate } from '../public/src/components/entory_point';
 
-const Employee_page: VFC = () => {
+const Employee_page: NextPage = () => {
   return (
     <>
-      <Employee />
+      <EmployeeTemplate />
     </>
   );
 };
