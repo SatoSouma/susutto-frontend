@@ -1,5 +1,5 @@
 import React, { VFC } from 'react';
-import { MyTaskBtn, AllTaskBtn } from '../../entory_point';
+import { MyTaskBtn, AllTaskBtn, TaskList } from '../../entory_point';
 import { TaskBtnGroup } from '../../entory_point';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 
@@ -20,7 +20,8 @@ const EmployeeTemplate: VFC = () => {
             <p>あなたのお仕事</p>
           </TabPanel>
           <TabPanel>
-            <p>全てのお仕事</p>
+            <TaskList />
+            <TaskList />
           </TabPanel>
         </TabPanels>
       </Tabs>
