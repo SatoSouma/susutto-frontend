@@ -1,3 +1,14 @@
 .tasklist {
   text-align: center;
+  outline: unset;
+  .details {
+    .tasks {
+      position: relative;
+      display: block;
+      cursor: pointer; /* カーソルをポインターに */
+      font-weight: bold;
+      background-color: #eede98;
+      transition: 0.2s;
+    }
+  }
 }
