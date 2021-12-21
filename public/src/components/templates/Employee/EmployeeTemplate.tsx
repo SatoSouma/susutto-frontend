@@ -1,6 +1,10 @@
 import React, { VFC } from 'react';
-import { MyTaskBtn, AllTaskBtn, TaskList } from '../../entory_point';
-import { TaskBtnGroup } from '../../entory_point';
+import {
+  MyTaskBtn,
+  AllTaskBtn,
+  AllTaskBox,
+  MyTaskBox,
+} from '../../entory_point';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 
 const EmployeeTemplate: VFC = () => {
@@ -17,11 +21,10 @@ const EmployeeTemplate: VFC = () => {
         </TabList>
         <TabPanels>
           <TabPanel>
-            <p>あなたのお仕事</p>
+            <MyTaskBox />
           </TabPanel>
           <TabPanel>
-            <TaskList />
-            <TaskList />
+            <AllTaskBox />
           </TabPanel>
         </TabPanels>
       </Tabs>
