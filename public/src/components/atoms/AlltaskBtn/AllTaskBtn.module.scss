@@ -1,13 +1,11 @@
 @import '../../../../../variables';
 
-@mixin taskBtn($media-screen-maxsize, $task-font-color) {
-  @media screen and (max-width: $media-screen-maxsize) {
-    .task {
-      .title {
-        color: $task-font-color;
-      }
+@mixin taskBtn($task-font-color) {
+  .task {
+    .title {
+      color: $task-font-color;
     }
   }
 }
 
-@include taskBtn($media-screen-maxsize, $task-font-color);
+@include taskBtn($task-font-color);

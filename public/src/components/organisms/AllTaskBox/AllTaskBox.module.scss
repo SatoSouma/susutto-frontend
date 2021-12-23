@@ -1,0 +1,15 @@
+@import '../../../../../variables';
+@mixin TaskBox($taskBox-bg) {
+  .box {
+    .list {
+      display: block;
+      padding-bottom: 1em;
+      padding-top: 1em;
+      background-color: $taskBox-bg;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  }
+}
+
+@include TaskBox($taskBox-bg);

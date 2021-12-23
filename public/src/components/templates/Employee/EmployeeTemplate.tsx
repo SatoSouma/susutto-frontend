@@ -1,30 +1,47 @@
 import React, { VFC } from 'react';
-import { MyTaskBtn, AllTaskBtn, TaskList } from '../../entory_point';
-import { TaskBtnGroup } from '../../entory_point';
+import {
+  MyTaskBtn,
+  AllTaskBtn,
+  AllTaskBox,
+  MyTaskBox,
+  TitleText,
+  Footer,
+} from '../../entory_point';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 
 const EmployeeTemplate: VFC = () => {
   return (
     <div>
+      <TitleText />
       <Tabs isFitted variant="enclosed">
         <TabList mb="1em">
-          <Tab>
+          <Tab
+            bg="green.300"
+            _selected={{ color: 'white', bg: 'green.400' }}
+            borderTopLeftRadius="0"
+            borderTopRightRadius="0"
+          >
             <MyTaskBtn />
           </Tab>
-          <Tab>
+          <Tab
+            bg="green.300"
+            _selected={{ color: 'white', bg: 'green.400' }}
+            borderTopLeftRadius="0"
+            borderTopRightRadius="0"
+          >
             <AllTaskBtn />
           </Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
-            <p>あなたのお仕事</p>
+            <MyTaskBox />
           </TabPanel>
           <TabPanel>
-            <TaskList />
-            <TaskList />
+            <AllTaskBox />
           </TabPanel>
         </TabPanels>
       </Tabs>
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -1,2 +1,2 @@
 @import '../AllTaskBtn/AllTaskBtn.module.scss';
-@include taskBtn($media-screen-maxsize, $task-font-color);
+@include taskBtn($task-font-color);

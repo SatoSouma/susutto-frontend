@@ -1,0 +1,15 @@
+@import '../../../../../variables';
+
+@mixin TaskList($taskList-text-color, $deadLine-text-color) {
+  .tasklist {
+    .taskText {
+      color: $taskList-text-color;
+    }
+    .deadLine {
+      font-size: 0.5em;
+      color: $deadLine-text-color;
+    }
+  }
+}
+
+@include TaskList($taskList-text-color, $deadLine-text-color);
