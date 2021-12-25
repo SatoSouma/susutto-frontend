@@ -5,8 +5,7 @@ import {
   AllTaskBox,
   MyTaskBox,
   TitleText,
-  Footer,
-} from '../../entory_point';
+} from '../../../entory_point';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 
 const EmployeeTemplate: VFC = () => {

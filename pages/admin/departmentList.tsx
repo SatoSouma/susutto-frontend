@@ -1,7 +1,12 @@
 import { NextPage } from 'next';
+import { DepartmentListTemplete } from '../../public/src/components/entory_point';
 
-const departmentList: NextPage = () => {
-  return <></>;
+const departmentListPage: NextPage = () => {
+  return (
+    <>
+      <DepartmentListTemplete />
+    </>
+  );
 };
 
-export default departmentList;
+export default departmentListPage;

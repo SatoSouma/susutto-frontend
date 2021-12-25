@@ -1,10 +1,10 @@
 @import '../../../../../variables';
 @mixin TaskText($farm-bg) {
   .taskText {
-    color: white;
+    color: $heading-font-color;
     background-color: $farm-bg;
     text-align: center;
-    font-size: 25px;
+    font-size: 1.5em;
     height: 2em;
     padding: 0.2em;
     border-top-left-radius: 10px;
