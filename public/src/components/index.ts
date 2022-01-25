@@ -10,11 +10,13 @@ export { default as TitleText } from './atoms/TitleText/TitleText';
 export { default as Footer } from './atoms/Footer/Footer';
 export { default as HeaderText } from './atoms/HeaderText/HeaderText';
 export { default as HeaderLink } from './atoms/HeaderLink/HeaderLink';
+export { default as FixBtn } from './atoms/FixBtn/FixBtn';
 
 // molecules
 export { default as AllTaskList } from './molecules/AllTaskList/AllTaskList';
 export { default as MyTaskList } from './molecules/MyTaskList/MyTaskList';
 export { default as Header } from './molecules/Header/Header';
+export { default as AdminTaskList } from './molecules/AdminTaskList/AdminTaskList';
 
 // organisms
 export { default as AllTaskBox } from './organisms/AllTaskBox/AllTaskBox';
@@ -23,3 +25,4 @@ export { default as MyTaskBox } from './organisms/MyTaskBox/MyTaskBox';
 // templates
 export { default as MainTemplete } from './templates/Employee/Main/MainTemplete';
 export { default as DepartmentListTemplete } from './templates/Admin/DepartmentList/DepartmentListTemplete';
+export { default as TaskListTemplete } from './templates/Admin/TaskList/taskListTemplete';
