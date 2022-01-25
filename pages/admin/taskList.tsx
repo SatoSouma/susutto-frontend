@@ -1,6 +1,11 @@
 import { NextPage } from 'next';
-const Admin_page: NextPage = () => {
-  return <div>test</div>;
+import { TaskListTemplete } from '../../public/src/components/entory_point';
+const taskListPage: NextPage = () => {
+  return (
+    <div>
+      <TaskListTemplete />
+    </div>
+  );
 };
 
-export default Admin_page;
+export default taskListPage;
