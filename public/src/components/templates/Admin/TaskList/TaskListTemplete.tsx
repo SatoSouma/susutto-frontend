@@ -1,5 +1,5 @@
 import { VFC, useRef } from 'react';
-import { Header, AdminTaskList } from '../../../entory_point';
+import { Header, AdminTaskList } from 'public';
 import {
   Tabs,
   TabList,

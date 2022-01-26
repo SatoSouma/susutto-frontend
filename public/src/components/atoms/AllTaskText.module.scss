@@ -1,4 +1,4 @@
-@import '../../../../../variables';
+@import '_variables';
 @mixin TaskText($farm-bg) {
   .taskText {
     color: $heading-font-color;

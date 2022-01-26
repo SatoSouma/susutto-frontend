@@ -1,4 +1,4 @@
-import { AllTaskList, AllTaskText } from '../../entory_point';
+import { AllTaskList, AllTaskText } from 'public';
 import { VFC } from 'react';
 import { Grid, GridItem } from '@chakra-ui/react';
 import styles from './AllTaskBox.module.scss';

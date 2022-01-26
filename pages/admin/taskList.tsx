@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { TaskListTemplete } from '../../public/src/components/entory_point';
+import { TaskListTemplete } from 'public';
 const taskListPage: NextPage = () => {
   return (
     <div>

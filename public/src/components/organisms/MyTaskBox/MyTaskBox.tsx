@@ -1,6 +1,5 @@
 import { VFC } from 'react';
-
-import { MyTaskList, MyTaskText } from '../../entory_point';
+import { MyTaskList, MyTaskText } from 'public';
 import styles from './MyTaskBox.module.scss';
 
 const MyTaskBox: VFC = () => {

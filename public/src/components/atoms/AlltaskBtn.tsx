@@ -1,4 +1,4 @@
-import React, { VFC, useState, useEffect, useContext } from 'react';
+import React, { VFC } from 'react';
 import styles from './AllTaskBtn.module.scss';
 
 const AllTaskBtn: VFC = () => {
