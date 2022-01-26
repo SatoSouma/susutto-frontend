@@ -1,6 +1,6 @@
 import React, { VFC } from 'react';
 import { NextPage } from 'next';
-import { MainTemplete } from '../../public/src/components/entory_point';
+import { MainTemplete } from 'public';
 
 const mainPage: NextPage = () => {
   return (

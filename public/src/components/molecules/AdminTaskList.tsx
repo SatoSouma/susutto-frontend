@@ -1,17 +1,15 @@
 import { VFC } from 'react';
 import {
-  Button,
   AccordionPanel,
   Accordion,
   AccordionButton,
   AccordionItem,
   AccordionIcon,
-  Box,
   Text,
   Grid,
   GridItem,
 } from '@chakra-ui/react';
-import { FixBtn } from '../../entory_point';
+import { FixBtn } from 'public';
 
 const AdminTaskList: VFC = () => {
   return (

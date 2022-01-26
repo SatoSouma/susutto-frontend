@@ -1,4 +1,4 @@
-import { HeaderText, HeaderLink } from '../../entory_point';
+import { HeaderText, HeaderLink } from 'public';
 import { VFC } from 'react';
 import styles from './Header.module.scss';
 import { Grid, GridItem } from '@chakra-ui/react';

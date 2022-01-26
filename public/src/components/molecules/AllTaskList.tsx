@@ -8,7 +8,7 @@ import {
   AccordionIcon,
   Box,
 } from '@chakra-ui/react';
-import { HandleBtn } from '../../entory_point';
+import { HandleBtn } from 'public';
 import styles from './AllTaskList.module.scss';
 
 const AllTaskList: VFC = () => {

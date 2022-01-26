@@ -1,4 +1,4 @@
-@import '../../../../../variables';
+@import 'variables';
 
 @mixin TaskList($taskList-text-color, $deadLine-text-color) {
   .tasklist {

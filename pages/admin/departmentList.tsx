@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { DepartmentListTemplete } from '../../public/src/components/entory_point';
+import { DepartmentListTemplete } from 'public';
 import { useRef } from 'react';
 
 const departmentListPage: NextPage = () => {
