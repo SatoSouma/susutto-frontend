@@ -1,17 +1,23 @@
 import { AllTaskList, AllTaskText } from 'public';
 import { VFC } from 'react';
-import { Grid, GridItem } from '@chakra-ui/react';
+import { Box, Grid, GridItem } from '@chakra-ui/react';
 import styles from './AllTaskBox.module.scss';
 
 const AllTaskBox: VFC = () => {
   return (
-    <div className={styles.box}>
+    <Box>
       <AllTaskText />
-      <div className={styles.list}>
+      <Box
+        paddingBottom="1em"
+        paddingTop="1em"
+        bg="cream.100"
+        borderBottomLeftRadius="10px"
+        borderBottomRightRadius="10px"
+      >
         <AllTaskList />
         <AllTaskList />
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

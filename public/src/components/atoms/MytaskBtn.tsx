@@ -1,11 +1,12 @@
+import { Box, Text } from '@chakra-ui/react';
 import React, { VFC, useState, useEffect, useContext } from 'react';
 import styles from './MyTaskBtn.module.scss';
 
 const MyTaskBtn: VFC = () => {
   return (
-    <div className={styles.task}>
-      <p className={styles.title}>MyTask</p>
-    </div>
+    <Box>
+      <Text color="white">MyTask</Text>
+    </Box>
   );
 };
 

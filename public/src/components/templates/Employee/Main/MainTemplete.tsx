@@ -6,25 +6,27 @@ import {
   MyTaskBox,
   TitleText,
 } from 'public';
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
 
 const EmployeeTemplate: VFC = () => {
   return (
-    <div>
+    <Box>
       <TitleText />
       <Tabs isFitted variant="enclosed">
         <TabList mb="1em">
           <Tab
-            bg="green.300"
-            _selected={{ color: 'white', bg: 'green.400' }}
+            bg="LimeGreen.100"
+            borderRightColor="white"
+            _selected={{ color: 'white', bg: 'LimeGreen.200' }}
             borderTopLeftRadius="0"
             borderTopRightRadius="0"
           >
             <MyTaskBtn />
           </Tab>
           <Tab
-            bg="green.300"
-            _selected={{ color: 'white', bg: 'green.400' }}
+            bg="LimeGreen.100"
+            borderLeftColor="white"
+            _selected={{ color: 'white', bg: 'LimeGreen.200' }}
             borderTopLeftRadius="0"
             borderTopRightRadius="0"
           >
@@ -41,7 +43,7 @@ const EmployeeTemplate: VFC = () => {
         </TabPanels>
       </Tabs>
       {/* <Footer /> */}
-    </div>
+    </Box>
   );
 };
 
