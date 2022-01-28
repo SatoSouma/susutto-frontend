@@ -5,13 +5,16 @@ const theme = extendTheme({
       100: '#2599EF', //下に行くほど暗い色
       200: '#0B1C9D',
     },
-    creenGreen: {
+    LimeGreen: {
       100: '#7CE032',
       200: '#43B211',
     },
     vividRed: {
       100: '#FF7983',
       200: '#AC0922',
+    },
+    cream: {
+      100: '#f7f5e1',
     },
   },
 });

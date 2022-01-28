@@ -1,12 +1,12 @@
 import { VFC } from 'react';
-import { Button } from '@chakra-ui/react';
+import { Box, Button } from '@chakra-ui/react';
 import styles from './HandleBtn.module.scss';
 
 const HandleBtn: VFC = () => {
   return (
-    <div className={styles.HandleBtn}>
+    <Box paddingTop="1em" textAlign="right">
       <Button colorScheme="blue">担当する</Button>
-    </div>
+    </Box>
   );
 };
 

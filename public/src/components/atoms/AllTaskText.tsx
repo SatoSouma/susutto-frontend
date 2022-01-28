@@ -1,10 +1,21 @@
+import { Text } from '@chakra-ui/react';
 import { VFC } from 'react';
-import styles from './AllTaskText.module.scss';
 
 const AllTaskText: VFC = () => {
   return (
     <>
-      <p className={styles.taskText}>AllTask</p>
+      <Text
+        color="white"
+        bg="LimeGreen.100"
+        textAlign="center"
+        fontSize="1.5em"
+        height="2em"
+        padding="0.2em"
+        borderTopRightRadius="10px"
+        borderTopLeftRadius="10px"
+      >
+        AllTask
+      </Text>
     </>
   );
 };
