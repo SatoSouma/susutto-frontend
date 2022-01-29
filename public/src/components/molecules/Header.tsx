@@ -1,7 +1,8 @@
 import { HeaderText, HeaderLink } from 'public';
 import { VFC } from 'react';
 import styles from './Header.module.scss';
-import { Box, Grid, GridItem } from '@chakra-ui/react';
+import { Box, Grid, GridItem, Icon } from '@chakra-ui/react';
+import { AiOutlineUser } from 'react-icons/ai';
 
 const Header: VFC = () => {
   return (

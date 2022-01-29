@@ -11,6 +11,8 @@ export { default as Footer } from './src/components/atoms/Footer';
 export { default as HeaderText } from './src/components/atoms/HeaderText';
 export { default as HeaderLink } from './src/components/atoms/HeaderLink';
 export { default as FixBtn } from './src/components/atoms/FixBtn';
+//icons
+export { default as UserIcon } from './src/components/atoms/Icons/UserIcon';
 
 // molecules
 export { default as AllTaskList } from './src/components/molecules/AllTaskList';

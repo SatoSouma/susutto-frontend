@@ -14,7 +14,7 @@ import styles from './AllTaskList.module.scss';
 
 const AllTaskList: VFC = () => {
   return (
-    <Box>
+    <Box shadow="lg">
       <Accordion allowToggle>
         <AccordionItem
           w="300px"
