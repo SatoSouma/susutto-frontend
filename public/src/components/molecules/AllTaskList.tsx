@@ -14,7 +14,7 @@ import styles from './AllTaskList.module.scss';
 
 const AllTaskList: VFC = () => {
   return (
-    <Box shadow="lg">
+    <Box>
       <Accordion allowToggle>
         <AccordionItem
           w="300px"
@@ -22,9 +22,10 @@ const AllTaskList: VFC = () => {
           borderRadius="10px"
           m="auto"
           marginBottom="1em"
+          shadow="base"
         >
           <Heading>
-            <AccordionButton>
+            <AccordionButton _focus={{ boxShadow: 'none' }}>
               <Box flex="1" textAlign="left">
                 <Box color="gray.700">Section Task</Box>
                 <Box color="gray.500" fontSize="0.5em">

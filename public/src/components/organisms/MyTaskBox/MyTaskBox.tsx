@@ -7,14 +7,27 @@ const MyTaskBox: VFC = () => {
   return (
     <Box>
       <MyTaskText />
-      <Box
-        paddingBottom="1em"
-        paddingTop="1em"
-        bg="cream.100"
-        borderBottomLeftRadius="10px"
-        borderBottomRightRadius="10px"
-      >
-        <MyTaskList />
+      <Box>
+        <Box
+          paddingBottom="1em"
+          paddingTop="1em"
+          bg="cream.100"
+          borderBottomLeftRadius="10px"
+          borderBottomRightRadius="10px"
+          minHeight="100"
+          maxHeight="460"
+          overflow="auto"
+        >
+          <MyTaskList />
+          <MyTaskList />
+          <MyTaskList />
+          <MyTaskList />
+          <MyTaskList />
+          <MyTaskList />
+          <MyTaskList />
+          <MyTaskList />
+          <MyTaskList />
+        </Box>
       </Box>
     </Box>
   );
