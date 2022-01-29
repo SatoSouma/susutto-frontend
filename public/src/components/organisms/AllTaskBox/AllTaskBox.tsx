@@ -13,8 +13,10 @@ const AllTaskBox: VFC = () => {
         bg="cream.100"
         borderBottomLeftRadius="10px"
         borderBottomRightRadius="10px"
+        minHeight="100"
+        maxHeight="460"
+        overflow="auto"
       >
-        <AllTaskList />
         <AllTaskList />
       </Box>
     </Box>

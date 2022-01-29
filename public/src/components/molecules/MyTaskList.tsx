@@ -22,9 +22,10 @@ const MyTaskList: VFC = () => {
           borderRadius="10px"
           m="auto"
           marginBottom="1em"
+          shadow="base"
         >
           <Heading>
-            <AccordionButton>
+            <AccordionButton _focus={{ boxShadow: 'none' }}>
               <Box flex="1" textAlign="left">
                 <Box color="gray.700">Section Task</Box>
                 <Box color="gray.500" fontSize="0.5em">
