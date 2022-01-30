@@ -1,15 +1,27 @@
-import { VFC, useRef } from 'react';
-import { Header, AdminTaskList, UserIcon } from 'public';
-import { Box, Button, Text } from '@chakra-ui/react';
-import breakpoints from 'styles/mediaQuery';
+import { Box, Heading } from '@chakra-ui/react';
+import { AdminFooter, AdminHeader, DepartmentList } from 'public';
 
-const DepartmentListTemplete: VFC = () => {
+const DepartmentListTemplete: React.VFC = () => {
+  const departments: string[] = [
+    '農産',
+    '畜産',
+    '水産',
+    'デリカ',
+    'グロッサリー',
+    'サービスカウンター',
+  ];
   return (
     <>
-      <Text fontSize={[20, 100]}>これはテストです</Text>
-      <Button>
-        <UserIcon />
-      </Button>
+      <AdminHeader />
+      <Box>
+        <Heading>部署一覧</Heading>
+        <Box h="535" overflow="auto">
+          {departments.map((items: string) => (
+            <DepartmentList key={items} department={items} />
+          ))}
+        </Box>
+      </Box>
+      <AdminFooter />
     </>
   );
 };

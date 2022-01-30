@@ -29,9 +29,9 @@ const TaskListTemplete: VFC = () => {
             <Text>達成業務</Text>
           </Tab>
         </TabList>
-        <Box h="500">
+        <Box h="535">
           <TabPanels>
-            <TabPanel maxHeight="500" minHeight="100" overflow="auto">
+            <TabPanel maxHeight="535" minHeight="100" overflow="auto">
               <AdminTaskList />
               <AdminTaskList />
               <AdminTaskList />
@@ -39,15 +39,15 @@ const TaskListTemplete: VFC = () => {
               <AdminTaskList />
               <AdminTaskList />
             </TabPanel>
-            <TabPanel maxHeight="500" minHeight="100" overflow="auto">
+            <TabPanel maxHeight="535" minHeight="100" overflow="auto">
               <AdminTaskList />
               <AdminTaskList />
             </TabPanel>
-            <TabPanel maxHeight="500" minHeight="100" overflow="auto">
+            <TabPanel maxHeight="535" minHeight="100" overflow="auto">
               <AdminTaskList />
               <AdminTaskList />
             </TabPanel>
-            <TabPanel maxHeight="500" minHeight="100" overflow="auto">
+            <TabPanel maxHeight="535" minHeight="100" overflow="auto">
               <AdminTaskList />
               <AdminTaskList />
               <AdminTaskList />

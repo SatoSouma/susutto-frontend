@@ -1,7 +1,7 @@
 import { VFC } from 'react';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import styles from './HeaderLink.module.scss';
-import { Grid, GridItem } from '@chakra-ui/react';
+import { Grid, GridItem, Link } from '@chakra-ui/react';
 
 const AdminHeaderLink: VFC = () => {
   return (
@@ -23,7 +23,7 @@ const AdminHeaderLink: VFC = () => {
           marginTop="0.8em"
           color="white"
         >
-          <Link href="/admin/departmentList">業務指示</Link>
+          <Link href="/admin/taskAdd">業務指示</Link>
         </GridItem>
         <GridItem
           colStart={4}

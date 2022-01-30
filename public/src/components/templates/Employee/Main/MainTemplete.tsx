@@ -12,8 +12,8 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
 const EmployeeTemplate: VFC = () => {
   return (
     <Box>
-      <Box h="743">
-        <EmployeeHeader />
+      <EmployeeHeader />
+      <Box h="643">
         <Tabs isFitted variant="enclosed">
           <TabList mb="1em">
             <Tab

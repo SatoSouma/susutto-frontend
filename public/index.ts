@@ -9,7 +9,12 @@ export { default as EmployeeFooter } from './src/components/atoms/EmployeeFooter
 export { default as AdminHeaderText } from './src/components/atoms/AdminHeaderText';
 export { default as AdminHeaderLink } from './src/components/atoms/AdminHeaderLink';
 export { default as AdminFooter } from './src/components/atoms/AdminFooter';
+export { default as DepartmentList } from './src/components/atoms/DepartmentList';
 export { default as FixBtn } from './src/components/atoms/FixBtn';
+export { default as DepartmentSelector } from './src/components/atoms/DepartmentSelector';
+export { default as TaskTitle } from './src/components/atoms/TaskTitle';
+export { default as DeadlineSelector } from './src/components/atoms/DeadlineSelector';
+export { default as TaskContent } from './src/components/atoms/TaskContent';
 //icons
 export { default as UserIcon } from './src/components/atoms/Icons/UserIcon';
 export { default as HamburgerIcon } from './src/components/atoms/Icons/HamburgerIcon';
@@ -27,5 +32,5 @@ export { default as EmployeeHeader } from './src/components/organisms/EmployeeHe
 
 // templates
 export { default as MainTemplete } from './src/components/templates/Employee/Main/MainTemplete';
-export { default as DepartmentListTemplete } from './src/components/templates/Admin/DepartmentList/DepartmentListTemplete';
+export { default as TaskAddTemplate } from './src/components/templates/Admin/TaskAdd/TaskAddTemplete';
 export { default as TaskListTemplete } from './src/components/templates/Admin/TaskList/TaskListTemplete';

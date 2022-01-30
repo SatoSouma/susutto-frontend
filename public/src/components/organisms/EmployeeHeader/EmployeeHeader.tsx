@@ -65,12 +65,7 @@ const EmployeeHeader: VFC = () => {
                 <Text>Linkなど</Text>
               </DrawerBody>
 
-              <DrawerFooter>
-                <Button variant="outline" mr={3} onClick={onClose}>
-                  Cancel
-                </Button>
-                <Button color="blue">Save</Button>
-              </DrawerFooter>
+              <DrawerFooter></DrawerFooter>
             </DrawerContent>
           </DrawerOverlay>
         </Drawer>
