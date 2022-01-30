@@ -34,3 +34,5 @@ export { default as EmployeeHeader } from './src/components/organisms/EmployeeHe
 export { default as MainTemplete } from './src/components/templates/Employee/Main/MainTemplete';
 export { default as TaskAddTemplate } from './src/components/templates/Admin/TaskAdd/TaskAddTemplete';
 export { default as TaskListTemplete } from './src/components/templates/Admin/TaskList/TaskListTemplete';
+export { default as TaskFixTemplete } from './src/components/templates/Admin/TaskFix/TaskFixTemplete';
+export { default as LoginTemplete } from './src/components/templates/Login/LoginTemplete';
