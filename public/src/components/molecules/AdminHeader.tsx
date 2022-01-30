@@ -1,19 +1,19 @@
-import { HeaderText, HeaderLink } from 'public';
+import { AdminHeaderText, AdminHeaderLink } from 'public';
 import { VFC } from 'react';
 import styles from './Header.module.scss';
 import { Box, Grid, GridItem, Icon } from '@chakra-ui/react';
 import { AiOutlineUser } from 'react-icons/ai';
 
-const Header: VFC = () => {
+const AdminHeader: VFC = () => {
   return (
-    <Box bg="LimeGreen.100">
+    <Box bg="gray.500">
       <Box h="4em" borderBottom="white">
-        <HeaderText />
+        <AdminHeaderText />
       </Box>
       <hr />
-      <HeaderLink />
+      <AdminHeaderLink />
     </Box>
   );
 };
 
-export default Header;
+export default AdminHeader;

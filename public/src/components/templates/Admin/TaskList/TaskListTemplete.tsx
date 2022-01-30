@@ -1,5 +1,5 @@
-import { VFC, useRef } from 'react';
-import { Header, AdminTaskList } from 'public';
+import { VFC } from 'react';
+import { AdminHeader, AdminTaskList, AdminFooter } from 'public';
 import {
   Tabs,
   TabList,
@@ -7,12 +7,13 @@ import {
   TabPanels,
   TabPanel,
   Text,
+  Box,
 } from '@chakra-ui/react';
 
 const TaskListTemplete: VFC = () => {
   return (
     <>
-      <Header />
+      <AdminHeader />
       <Tabs isFitted variant="enclosed">
         <TabList mb="1em">
           <Tab>
@@ -28,25 +29,33 @@ const TaskListTemplete: VFC = () => {
             <Text>達成業務</Text>
           </Tab>
         </TabList>
-        <TabPanels>
-          <TabPanel>
-            <AdminTaskList />
-          </TabPanel>
-          <TabPanel>
-            <AdminTaskList />
-            <AdminTaskList />
-          </TabPanel>
-          <TabPanel>
-            <AdminTaskList />
-            <AdminTaskList />
-          </TabPanel>
-          <TabPanel>
-            <AdminTaskList />
-            <AdminTaskList />
-            <AdminTaskList />
-          </TabPanel>
-        </TabPanels>
+        <Box h="500">
+          <TabPanels>
+            <TabPanel maxHeight="500" minHeight="100" overflow="auto">
+              <AdminTaskList />
+              <AdminTaskList />
+              <AdminTaskList />
+              <AdminTaskList />
+              <AdminTaskList />
+              <AdminTaskList />
+            </TabPanel>
+            <TabPanel maxHeight="500" minHeight="100" overflow="auto">
+              <AdminTaskList />
+              <AdminTaskList />
+            </TabPanel>
+            <TabPanel maxHeight="500" minHeight="100" overflow="auto">
+              <AdminTaskList />
+              <AdminTaskList />
+            </TabPanel>
+            <TabPanel maxHeight="500" minHeight="100" overflow="auto">
+              <AdminTaskList />
+              <AdminTaskList />
+              <AdminTaskList />
+            </TabPanel>
+          </TabPanels>
+        </Box>
       </Tabs>
+      <AdminFooter />
     </>
   );
 };

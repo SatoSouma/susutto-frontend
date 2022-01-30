@@ -1,4 +1,3 @@
-import styles from './Footer.module.scss';
 import { VFC } from 'react';
 import { Box } from '@chakra-ui/react';
 

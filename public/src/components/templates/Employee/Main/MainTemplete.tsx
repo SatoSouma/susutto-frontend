@@ -5,7 +5,7 @@ import {
   AllTaskBox,
   MyTaskBox,
   EmployeeHeader,
-  Footer,
+  EmployeeFooter,
 } from 'public';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
 
@@ -48,7 +48,7 @@ const EmployeeTemplate: VFC = () => {
         </Tabs>
       </Box>
 
-      <Footer />
+      <EmployeeFooter />
     </Box>
   );
 };

@@ -3,11 +3,7 @@ import { DepartmentListTemplete } from 'public';
 import { useRef } from 'react';
 
 const departmentListPage: NextPage = () => {
-  return (
-    <>
-      <DepartmentListTemplete />
-    </>
-  );
+  return <DepartmentListTemplete />;
 };
 
 export default departmentListPage;
