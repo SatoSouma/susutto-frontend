@@ -24,17 +24,16 @@ const MyTaskList: VFC = () => {
           marginBottom="1em"
           shadow="base"
         >
-          <Heading>
-            <AccordionButton _focus={{ boxShadow: 'none' }}>
-              <Box flex="1" textAlign="left">
-                <Box color="gray.700">Section Task</Box>
-                <Box color="gray.500" fontSize="0.5em">
-                  期限
-                </Box>
+          <AccordionButton _focus={{ boxShadow: 'none' }}>
+            <Box flex="1" textAlign="left">
+              <Box color="gray.700">Section Task</Box>
+              <Box color="gray.500" fontSize="0.5em">
+                期限
               </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </Heading>
+            </Box>
+            <AccordionIcon />
+          </AccordionButton>
+
           <AccordionPanel pb={4}>
             テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
             <CompleteBtn />

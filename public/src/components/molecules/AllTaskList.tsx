@@ -1,6 +1,5 @@
 import { VFC } from 'react';
 import {
-  Button,
   AccordionPanel,
   Accordion,
   AccordionButton,
@@ -10,7 +9,6 @@ import {
   Heading,
 } from '@chakra-ui/react';
 import { HandleBtn } from 'public';
-import styles from './AllTaskList.module.scss';
 
 const AllTaskList: VFC = () => {
   return (

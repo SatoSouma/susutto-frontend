@@ -1,11 +1,7 @@
 import { NextPage } from 'next';
 import { TaskListTemplete } from 'public';
 const taskListPage: NextPage = () => {
-  return (
-    <div>
-      <TaskListTemplete />
-    </div>
-  );
+  return <TaskListTemplete />;
 };
 
 export default taskListPage;

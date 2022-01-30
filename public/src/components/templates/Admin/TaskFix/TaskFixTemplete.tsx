@@ -8,13 +8,13 @@ import {
   AdminFooter,
 } from 'public';
 
-const TaskAddTemplete: React.VFC = () => {
+const TaskFixTemplete: React.VFC = () => {
   return (
     <>
       <AdminHeader />
       <Grid templateColumns="repeat(2, 1fr)" h="575">
         <GridItem colSpan={1} textAlign="center" mt="10">
-          <Heading>業務指示作成画面</Heading>
+          <Heading>業務指示修正画面</Heading>
         </GridItem>
         <GridItem colSpan={1} mt="10">
           <DepartmentSelector />
@@ -29,7 +29,7 @@ const TaskAddTemplete: React.VFC = () => {
           <TaskContent />
         </GridItem>
         <GridItem colSpan={2} textAlign="center">
-          <Button colorScheme="blue">作成</Button>
+          <Button colorScheme="blue">修正</Button>
         </GridItem>
       </Grid>
       <AdminFooter />
@@ -37,4 +37,4 @@ const TaskAddTemplete: React.VFC = () => {
   );
 };
 
-export default TaskAddTemplete;
+export default TaskFixTemplete;

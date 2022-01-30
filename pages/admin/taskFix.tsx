@@ -1,7 +1,8 @@
 import { NextPage } from 'next';
+import { TaskFixTemplete } from 'public';
 
 const taskFix: NextPage = () => {
-  return <></>;
+  return <TaskFixTemplete />;
 };
 
 export default taskFix;
