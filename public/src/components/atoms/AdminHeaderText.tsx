@@ -4,7 +4,17 @@ import styles from './HeaderText.module.scss';
 
 const AdminHeaderText: VFC = () => {
   return (
-    <Text color="gray.700" fontSize="1em" textAlign="center" pt="3">
+    <Text
+      color="gray.800"
+      fontSize="1em"
+      textAlign="center"
+      pt="4"
+      h="60px"
+      fontWeight="solid"
+      fontSize="15"
+      borderBottom="1px"
+      borderColor="gray.300"
+    >
       chakra 管理画面
     </Text>
   );

@@ -15,18 +15,23 @@ import { FixBtn } from 'public';
 const AdminTaskList: VFC = () => {
   return (
     <Accordion allowToggle>
-      <AccordionItem borderRadius="10px" shadow="base" marginBottom="1em">
+      <AccordionItem
+        borderRadius="10px"
+        borderColor="gray.100"
+        shadow="base"
+        marginBottom="1em"
+      >
         <AccordionButton h="70">
           <Box flex="1">
             <Grid templateColumns="repeat(4, 1fr)">
               <GridItem colSpan={1}>
-                <Text>業務名</Text>
+                <Text>TaskName</Text>
               </GridItem>
               <GridItem colSpan={1}>
-                <Text>部署名</Text>
+                <Text>DepartmentName</Text>
               </GridItem>
               <GridItem colSpan={1}>
-                <Text>担当者名</Text>
+                <Text>EmployeeName</Text>
               </GridItem>
             </Grid>
           </Box>

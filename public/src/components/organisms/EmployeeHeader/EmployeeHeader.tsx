@@ -34,7 +34,7 @@ const EmployeeHeader: VFC = () => {
           _hover={{ bg: 'LimeGreen.100' }}
           _focus={{ boxShadow: 'none', bg: 'LimeGreen.100' }}
         >
-          <UserIcon />
+          <UserIcon color={'white'} size={'8'} />
         </Button>
       </GridItem>
       <GridItem colSpan={1}>
@@ -50,7 +50,7 @@ const EmployeeHeader: VFC = () => {
           _focus={{ boxShadow: 'none', bg: 'LimeGreen.100' }}
           onClick={onOpen}
         >
-          <HamburgerIcon />
+          <HamburgerIcon color={'white'} size={'8'} />
         </Button>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
           <DrawerOverlay>

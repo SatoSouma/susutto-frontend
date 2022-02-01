@@ -15,11 +15,16 @@ export { default as DepartmentSelector } from './src/components/atoms/Department
 export { default as TaskTitle } from './src/components/atoms/TaskTitle';
 export { default as DeadlineSelector } from './src/components/atoms/DeadlineSelector';
 export { default as TaskContent } from './src/components/atoms/TaskContent';
+import { default as DashboardBtn } from './src/components/atoms/DashboardBtn';
+import { default as AttendBtn } from './src/components/atoms/AttendBtn';
+import { default as FormBtn } from './src/components/atoms/FormBtn';
+import { default as HeaderBar } from './src/components/atoms/HeaderBar';
 //icons
 export { default as UserIcon } from './src/components/atoms/Icons/UserIcon';
 export { default as HamburgerIcon } from './src/components/atoms/Icons/HamburgerIcon';
 export { default as DesktopIcon } from './src/components/atoms/Icons/DesktopIcon';
 export { default as AirPlaneIcon } from './src/components/atoms/Icons/AirPlaneIcon';
+import { default as UserBlackIcon } from './src/components/atoms/Icons/UserBlackIcon';
 
 // molecules
 export { default as AllTaskList } from './src/components/molecules/AllTaskList';
@@ -31,10 +36,14 @@ export { default as AdminTaskList } from './src/components/molecules/AdminTaskLi
 export { default as AllTaskBox } from './src/components/organisms/AllTaskBox/AllTaskBox';
 export { default as MyTaskBox } from './src/components/organisms/MyTaskBox/MyTaskBox';
 export { default as EmployeeHeader } from './src/components/organisms/EmployeeHeader/EmployeeHeader';
+export { default as TaskAdd } from './src/components/organisms/TaskAdd/TaskAdd';
+export { default as TaskList } from './src/components/organisms/TaskList/TaskList';
 
 // templates
 export { default as MainTemplete } from './src/components/templates/Employee/Main/MainTemplete';
-export { default as TaskAddTemplate } from './src/components/templates/Admin/TaskAdd/TaskAddTemplete';
-export { default as TaskListTemplete } from './src/components/templates/Admin/TaskList/TaskListTemplete';
-export { default as TaskFixTemplete } from './src/components/templates/Admin/TaskFix/TaskFixTemplete';
+export { default as TaskFix } from './src/components/templates/Admin/TaskFix/TaskFix';
 export { default as LoginTemplete } from './src/components/templates/Login/LoginTemplete';
+export { default as AdminMainTemplete } from './src/components/templates/Admin/AdminMain/AdminMainTemplete';
+
+// redux state
+export { work } from './redux/selectors';

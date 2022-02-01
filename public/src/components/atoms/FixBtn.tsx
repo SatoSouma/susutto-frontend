@@ -5,7 +5,7 @@ import styles from './FixBtn.module.scss';
 const FixBtn: VFC = () => {
   return (
     <Box paddingTop="1em" textAlign="right">
-      <Button colorScheme="blue">修正</Button>
+      <Button colorScheme="blue">Fix</Button>
     </Box>
   );
 };
