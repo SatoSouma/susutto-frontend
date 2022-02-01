@@ -6,8 +6,8 @@ import { AiOutlineUser } from 'react-icons/ai';
 
 const AdminHeader: VFC = () => {
   return (
-    <Box bg="gray.500">
-      <Box h="4em" borderBottom="white">
+    <Box bg="white">
+      <Box borderBottom="1" borderColor="gray.600" h="50">
         <AdminHeaderText />
       </Box>
       <hr />

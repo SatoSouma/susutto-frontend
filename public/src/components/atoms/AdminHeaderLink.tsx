@@ -6,33 +6,15 @@ import { Grid, GridItem, Link } from '@chakra-ui/react';
 const AdminHeaderLink: VFC = () => {
   return (
     <div>
-      <Grid templateColumns="repeat(5, 1fr)" height="50px">
-        <GridItem
-          colStart={2}
-          colEnd={3}
-          textAlign="center"
-          marginTop="0.8em"
-          color="white"
-        >
-          <Link href="/admin/taskList">業務指示状況</Link>
+      <Grid templateColumns="repeat(2, 1fr)" height="50px" color="gray.600">
+        <GridItem colSpan={2} textAlign="center">
+          <Link href="/admin/taskList">Dashboard</Link>
         </GridItem>
-        <GridItem
-          colStart={3}
-          colEnd={4}
-          textAlign="center"
-          marginTop="0.8em"
-          color="white"
-        >
-          <Link href="/admin/taskAdd">業務指示</Link>
+        <GridItem colSpan={2} textAlign="center">
+          <Link href="/admin/taskAdd">Forms</Link>
         </GridItem>
-        <GridItem
-          colStart={4}
-          colEnd={5}
-          textAlign="center"
-          marginTop="0.8em"
-          color="white"
-        >
-          <Link href="/admin/departmentList">出勤情報</Link>
+        <GridItem colSpan={2} textAlign="center">
+          <Link href="/admin/departmentList">Attendance status</Link>
         </GridItem>
       </Grid>
     </div>

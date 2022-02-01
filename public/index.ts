@@ -18,6 +18,8 @@ export { default as TaskContent } from './src/components/atoms/TaskContent';
 //icons
 export { default as UserIcon } from './src/components/atoms/Icons/UserIcon';
 export { default as HamburgerIcon } from './src/components/atoms/Icons/HamburgerIcon';
+export { default as DesktopIcon } from './src/components/atoms/Icons/DesktopIcon';
+export { default as AirPlaneIcon } from './src/components/atoms/Icons/AirPlaneIcon';
 
 // molecules
 export { default as AllTaskList } from './src/components/molecules/AllTaskList';
