@@ -29,7 +29,6 @@ export { default as DepartmentIcon } from './src/components/atoms/Icons/Departme
 // molecules
 export { default as AllTaskList } from './src/components/molecules/AllTaskList';
 export { default as MyTaskList } from './src/components/molecules/MyTaskList';
-export { default as AdminHeader } from './src/components/molecules/AdminHeader';
 export { default as AdminTaskList } from './src/components/molecules/AdminTaskList';
 
 // organisms
