@@ -1,10 +1,10 @@
-import { AllTaskText, HandleBtn, MyTaskList, AdminHeader } from 'public';
 import { NextPage } from 'next';
+import { LoginBackBtn } from 'public';
 
 const Tester_page: NextPage = () => {
   return (
     <>
-      <AdminHeader />
+      <LoginBackBtn />
     </>
   );
 };

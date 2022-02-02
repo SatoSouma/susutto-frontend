@@ -1,16 +1,18 @@
 import { Box, Grid, GridItem, Text } from '@chakra-ui/react';
-import { AdminHeaderText, AdminTaskList } from 'public';
-import AttendBtn from 'public/src/components/atoms/AttendBtn';
-import DashboardBtn from 'public/src/components/atoms/DashboardBtn';
-import FormBtn from 'public/src/components/atoms/FormBtn';
-import HeaderBar from 'public/src/components/atoms/HeaderBar';
-import { useDispatch, useSelector } from 'react-redux';
+import {
+  AdminHeaderText,
+  AttendBtn,
+  DashboardBtn,
+  FormBtn,
+  HeaderBar,
+  LoginBackBtn,
+} from 'public';
+
+import { useSelector } from 'react-redux';
 import { work } from 'public';
 import { TaskAdd, TaskList } from 'public';
 
 const AdminMainTemplete: React.VFC = () => {
-  const dispatch = useDispatch();
-
   const reWork = useSelector(work);
 
   let page: any;
@@ -42,13 +44,7 @@ const AdminMainTemplete: React.VFC = () => {
         <GridItem colSpan={4} borderBottom="1px" borderColor="gray.100">
           <HeaderBar />
         </GridItem>
-        <GridItem
-          colSpan={1}
-          boxShadow="2xl"
-          h="670"
-          borderRight="1px"
-          borderColor="gray.100"
-        >
+        <GridItem colSpan={1} h="730" borderRight="1px" borderColor="gray.100">
           <Grid templateColumns="repeat(1, 1fr)" textAlign="center">
             <GridItem colSpan={1} mt="5">
               <DashboardBtn />
@@ -59,9 +55,21 @@ const AdminMainTemplete: React.VFC = () => {
             <GridItem colSpan={1} mt="5">
               <AttendBtn />
             </GridItem>
+            <GridItem colSpan={1} mt="20">
+              <LoginBackBtn />
+            </GridItem>
           </Grid>
         </GridItem>
-        <GridItem colSpan={4} pt="6" pr="10" pl="10" bg="gray.100">
+        <GridItem
+          colSpan={4}
+          pt="10"
+          pr="10"
+          pl="10"
+          bg="gray.100"
+          boxShadow="inner"
+          border="2px"
+          borderColor="gray.200"
+        >
           {page}
         </GridItem>
       </Grid>

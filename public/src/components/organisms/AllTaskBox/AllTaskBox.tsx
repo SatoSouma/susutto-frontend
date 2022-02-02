@@ -5,7 +5,7 @@ import styles from './AllTaskBox.module.scss';
 
 const AllTaskBox: VFC = () => {
   return (
-    <Box boxShadow="base" borderRadius="10px">
+    <Box boxShadow="lg" borderRadius="10px">
       <AllTaskText />
       <Box
         paddingBottom="1em"
@@ -14,7 +14,7 @@ const AllTaskBox: VFC = () => {
         borderBottomLeftRadius="10px"
         borderBottomRightRadius="10px"
         minHeight="100"
-        maxHeight="460"
+        maxHeight="480"
         overflow="auto"
       >
         <AllTaskList />

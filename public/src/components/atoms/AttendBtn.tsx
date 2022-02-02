@@ -1,5 +1,4 @@
 import { Button, Text } from '@chakra-ui/react';
-import UserBlackIcon from './Icons/UserBlackIcon';
 import UserIcon from './Icons/UserIcon';
 import { useDispatch } from 'react-redux';
 import { setPage } from 'public/redux/actions';
@@ -14,9 +13,10 @@ const AttendBtn: React.VFC = () => {
       h="50px"
       onClick={() => dispatch(setPage('attend'))}
       _focus={{ boxShadow: 'none' }}
+      pr="50"
     >
       <UserIcon color={'black'} size={'4'} />
-      <Text pl="3" color="gray.600">
+      <Text pl="6" color="gray.600" fontSize="15">
         Attendance status
       </Text>
     </Button>

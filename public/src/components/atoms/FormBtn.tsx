@@ -15,9 +15,10 @@ const FormBtn: React.VFC = () => {
       h="50px"
       onClick={() => dispatch(setPage('add'))}
       _focus={{ boxShadow: 'none' }}
+      pr="150"
     >
       <AirPlaneIcon />
-      <Text pl="3" color="gray.600">
+      <Text pl="6" color="gray.600" fontSize="15">
         Form
       </Text>
     </Button>

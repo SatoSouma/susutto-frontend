@@ -73,31 +73,31 @@ const TaskList: VFC = () => {
         <Box h="550">
           <TabPanels>
             <TabPanel maxHeight="550" minHeight="100" overflow="auto">
-              <AdminTaskList />
-              <AdminTaskList />
-              <AdminTaskList />
-              <AdminTaskList />
-              <AdminTaskList />
-              <AdminTaskList />
-              <AdminTaskList />
-              <AdminTaskList />
-              <AdminTaskList />
-              <AdminTaskList />
-              <AdminTaskList />
-              <AdminTaskList />
+              <AdminTaskList color="LimeGreen" />
+              <AdminTaskList color="LimeGreen" />
+              <AdminTaskList color="skyBlue" />
+              <AdminTaskList color="vividRed" />
+              <AdminTaskList color="skyBlue" />
+              <AdminTaskList color="LimeGreen" />
+              <AdminTaskList color="LimeGreen" />
+              <AdminTaskList color="LimeGreen" />
+              <AdminTaskList color="skyBlue" />
+              <AdminTaskList color="vividRed" />
+              <AdminTaskList color="vividRed" />
+              <AdminTaskList color="skyBlue" />
             </TabPanel>
             <TabPanel maxHeight="550" minHeight="100" overflow="auto">
-              <AdminTaskList />
-              <AdminTaskList />
+              <AdminTaskList color="LimeGreen" />
+              <AdminTaskList color="LimeGreen" />
             </TabPanel>
             <TabPanel maxHeight="550" minHeight="100" overflow="auto">
-              <AdminTaskList />
-              <AdminTaskList />
+              <AdminTaskList color="skyBlue" />
+              <AdminTaskList color="LimeGreen" />
             </TabPanel>
             <TabPanel maxHeight="550" minHeight="100" overflow="auto">
-              <AdminTaskList />
-              <AdminTaskList />
-              <AdminTaskList />
+              <AdminTaskList color="vividRed" />
+              <AdminTaskList color="skyBlue" />
+              <AdminTaskList color="LimeGreen" />
             </TabPanel>
           </TabPanels>
         </Box>
