@@ -10,7 +10,7 @@ const DepartmentSelector: React.VFC = () => {
       borderRadius="10"
       borderColor="gray.300"
     >
-      <Select placeholder="部署選択">
+      <Select placeholder="部署選択" color="gray.600">
         <option value="agricultural">農産</option>
         <option value="livestock">畜産</option>
         <option value="fisheries">水産</option>

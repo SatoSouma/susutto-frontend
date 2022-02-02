@@ -1,14 +1,19 @@
 import { Icon } from '@chakra-ui/react';
 
-const UserIcon: React.VFC = () => {
+type props = {
+  size: string;
+  color: string;
+};
+
+const UserIcon: React.VFC<props> = (props: props) => {
   return (
     <Icon
       viewBox="0 0 448 512"
       aria-hidden="true"
       data-prefix="fas"
       data-icon="users"
-      color="white"
-      boxSize="8"
+      boxSize={props.size}
+      color={props.color}
     >
       <path
         fill="currentColor"

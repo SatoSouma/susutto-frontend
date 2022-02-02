@@ -10,33 +10,54 @@ import {
   GridItem,
   Box,
 } from '@chakra-ui/react';
-import { FixBtn } from 'public';
+import { TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
+import { FixBtn, DepartmentIcon } from 'public';
 
-const AdminTaskList: VFC = () => {
+type props = {
+  color: string;
+};
+
+const AdminTaskList: VFC<props> = (props: props) => {
   return (
     <Accordion allowToggle>
-      <AccordionItem borderRadius="10px" shadow="base" marginBottom="1em">
-        <AccordionButton h="70">
-          <Box flex="1">
-            <Grid templateColumns="repeat(4, 1fr)">
-              <GridItem colSpan={1}>
-                <Text>業務名</Text>
-              </GridItem>
-              <GridItem colSpan={1}>
-                <Text>部署名</Text>
-              </GridItem>
-              <GridItem colSpan={1}>
-                <Text>担当者名</Text>
-              </GridItem>
-            </Grid>
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
+      <AccordionItem
+        borderRadius="5px"
+        borderColor="gray.100"
+        boxShadow="base"
+        marginBottom="1em"
+      >
+        {({ isExpanded }) => (
+          <>
+            <AccordionButton h="70" _focus={{ boxShadow: 'none' }}>
+              <Box flex="1">
+                <Grid templateColumns="repeat(13, 1fr)" color="gray.600">
+                  <GridItem colSpan={1}>
+                    <DepartmentIcon color={props.color} />
+                  </GridItem>
+                  <GridItem colSpan={4}>
+                    <Text>TaskName</Text>
+                  </GridItem>
+                  <GridItem colSpan={4}>
+                    <Text>DepartmentName</Text>
+                  </GridItem>
+                  <GridItem colSpan={4}>
+                    <Text>EmployeeName</Text>
+                  </GridItem>
+                </Grid>
+              </Box>
+              {isExpanded ? (
+                <TriangleUpIcon color={`${props.color}.100`} />
+              ) : (
+                <TriangleDownIcon color={`${props.color}.100`} />
+              )}
+            </AccordionButton>
 
-        <AccordionPanel pb={4}>
-          テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
-          <FixBtn />
-        </AccordionPanel>
+            <AccordionPanel pb={4}>
+              テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+              <FixBtn />
+            </AccordionPanel>
+          </>
+        )}
       </AccordionItem>
     </Accordion>
   );

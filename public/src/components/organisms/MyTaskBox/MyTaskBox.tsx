@@ -5,7 +5,7 @@ import { Box } from '@chakra-ui/react';
 
 const MyTaskBox: VFC = () => {
   return (
-    <Box>
+    <Box boxShadow="lg" borderRadius="10px">
       <MyTaskText />
       <Box>
         <Box
@@ -15,7 +15,7 @@ const MyTaskBox: VFC = () => {
           borderBottomLeftRadius="10px"
           borderBottomRightRadius="10px"
           minHeight="100"
-          maxHeight="460"
+          maxHeight="480"
           overflow="auto"
         >
           <MyTaskList />

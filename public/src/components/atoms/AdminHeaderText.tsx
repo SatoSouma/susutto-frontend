@@ -4,8 +4,18 @@ import styles from './HeaderText.module.scss';
 
 const AdminHeaderText: VFC = () => {
   return (
-    <Text color="white" fontSize="2em" marginLeft="1.3em" paddingTop="0.2em">
-      Title 管理画面
+    <Text
+      color="gray.900"
+      fontSize="1em"
+      textAlign="center"
+      pt="4"
+      h="60px"
+      fontWeight="solid"
+      fontSize="20"
+      borderBottom="1px"
+      borderColor="gray.300"
+    >
+      chakra 管理画面
     </Text>
   );
 };

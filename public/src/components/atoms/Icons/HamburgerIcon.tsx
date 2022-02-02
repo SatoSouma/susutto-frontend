@@ -1,14 +1,19 @@
 import { Icon } from '@chakra-ui/react';
 
-const HamburgerIcon: React.VFC = () => {
+type props = {
+  size: string;
+  color: string;
+};
+
+const HamburgerIcon: React.VFC<props> = (props: props) => {
   return (
     <Icon
       viewBox="0 0 448 512"
       aria-hidden="true"
       data-prefix="fas"
       data-icon="bars"
-      color="white"
-      boxSize="8"
+      color={props.color}
+      boxSize={props.size}
     >
       <path
         fill="currentColor"

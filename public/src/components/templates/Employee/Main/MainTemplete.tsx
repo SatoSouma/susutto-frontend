@@ -15,7 +15,7 @@ const EmployeeTemplate: VFC = () => {
       <EmployeeHeader />
       <Box h="643">
         <Tabs isFitted variant="enclosed">
-          <TabList mb="1em">
+          <TabList boxShadow="lg">
             <Tab
               bg="LimeGreen.100"
               borderRightColor="white"
@@ -37,7 +37,7 @@ const EmployeeTemplate: VFC = () => {
               <AllTaskBtn />
             </Tab>
           </TabList>
-          <TabPanels>
+          <TabPanels pt="1em">
             <TabPanel>
               <MyTaskBox />
             </TabPanel>

@@ -1,12 +1,10 @@
-import { AllTaskText, HandleBtn, MyTaskList } from 'public';
 import { NextPage } from 'next';
+import { LoginBackBtn } from 'public';
 
 const Tester_page: NextPage = () => {
   return (
     <>
-      <AllTaskText />
-      <MyTaskList />
-      <HandleBtn />
+      <LoginBackBtn />
     </>
   );
 };

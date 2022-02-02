@@ -1,20 +1,25 @@
-import { Button, Grid, Heading, GridItem } from '@chakra-ui/react';
+import { Button, Grid, Heading, GridItem, Box } from '@chakra-ui/react';
 import {
-  AdminHeader,
   DepartmentSelector,
   TaskTitle,
   DeadlineSelector,
   TaskContent,
-  AdminFooter,
 } from 'public';
 
-const TaskFixTemplete: React.VFC = () => {
+const TaskAdd: React.VFC = () => {
   return (
-    <>
-      <AdminHeader />
+    <Box
+      border="1px"
+      borderRadius="5px"
+      h="630"
+      borderColor="gray.300"
+      boxShadow="lg"
+      bg="white"
+      color="gray.500"
+    >
       <Grid templateColumns="repeat(2, 1fr)" h="575">
         <GridItem colSpan={1} textAlign="center" mt="10">
-          <Heading>業務指示修正画面</Heading>
+          <Heading color="gray.600">業務指示作成画面</Heading>
         </GridItem>
         <GridItem colSpan={1} mt="10">
           <DepartmentSelector />
@@ -29,12 +34,13 @@ const TaskFixTemplete: React.VFC = () => {
           <TaskContent />
         </GridItem>
         <GridItem colSpan={2} textAlign="center">
-          <Button colorScheme="blue">修正</Button>
+          <Button bg="skyBlue.100" color="white" w="20">
+            作成
+          </Button>
         </GridItem>
       </Grid>
-      <AdminFooter />
-    </>
+    </Box>
   );
 };
 
-export default TaskFixTemplete;
+export default TaskAdd;

@@ -4,6 +4,7 @@ const theme = extendTheme({
     skyBlue: {
       100: '#2599EF', //下に行くほど暗い色
       200: '#0B1C9D',
+      300: '#1b85d1',
     },
     LimeGreen: {
       100: '#7CE032',
