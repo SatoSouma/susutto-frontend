@@ -14,6 +14,7 @@ import { TaskAdd, TaskList } from 'public';
 
 const AdminMainTemplete: React.VFC = () => {
   const reWork = useSelector(work);
+  console.log(reWork);
 
   let page: any;
 

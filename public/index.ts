@@ -45,4 +45,4 @@ export { default as LoginTemplete } from './src/components/templates/Login/Login
 export { default as AdminMainTemplete } from './src/components/templates/Admin/AdminMain/AdminMainTemplete';
 
 // redux state
-export { work } from './redux/selectors';
+export { default as work } from './redux/selectors';

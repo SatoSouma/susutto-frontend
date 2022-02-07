@@ -16,7 +16,7 @@ const initianAppState: state = {
 const work = (state = initianAppState, action: action) => {
   switch (action.type) {
     case PAGE:
-      return { ...state, page: action.input };
+      return { page: action.input };
 
     default:
       return state;

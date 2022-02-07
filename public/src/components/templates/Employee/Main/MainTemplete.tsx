@@ -8,8 +8,12 @@ import {
   EmployeeFooter,
 } from 'public';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
+import { useSelector } from 'react-redux';
+import { work } from 'public';
 
 const EmployeeTemplate: VFC = () => {
+  const reWork = useSelector(work);
+  console.log(reWork);
   return (
     <Box>
       <EmployeeHeader />

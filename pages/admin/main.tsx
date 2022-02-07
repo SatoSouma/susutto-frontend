@@ -1,8 +1,16 @@
 import { NextPage } from 'next';
+import Head from 'next/head';
 import { AdminMainTemplete } from 'public';
 
-const main: NextPage = () => {
-  return <AdminMainTemplete />;
+const adminMainPage: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Admin</title>
+      </Head>
+      <AdminMainTemplete />
+    </>
+  );
 };
 
-export default main;
+export default adminMainPage;
