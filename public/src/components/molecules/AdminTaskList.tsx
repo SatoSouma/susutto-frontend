@@ -35,13 +35,13 @@ const AdminTaskList: VFC<props> = (props: props) => {
                     <DepartmentIcon color={props.color} />
                   </GridItem>
                   <GridItem colSpan={4}>
-                    <Text>TaskName</Text>
+                    <Text>業務名</Text>
                   </GridItem>
                   <GridItem colSpan={4}>
-                    <Text>DepartmentName</Text>
+                    <Text>部署名</Text>
                   </GridItem>
                   <GridItem colSpan={4}>
-                    <Text>EmployeeName</Text>
+                    <Text>従業員名</Text>
                   </GridItem>
                 </Grid>
               </Box>
@@ -53,7 +53,10 @@ const AdminTaskList: VFC<props> = (props: props) => {
             </AccordionButton>
 
             <AccordionPanel pb={4}>
-              テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+              業務内容 業務内容 業務内容 業務内容 業務内容 業務内容 業務内容
+              業務内容 業務内容 業務内容 業務内容 業務内容 業務内容 業務内容
+              業務内容 業務内容 業務内容 業務内容 業務内容 業務内容 業務内容
+              業務内容 業務内容 業務内容 業務内容 業務内容 業務内容 業務内容
               <FixBtn />
             </AccordionPanel>
           </>

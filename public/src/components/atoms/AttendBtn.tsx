@@ -1,17 +1,18 @@
 import { Button, Text } from '@chakra-ui/react';
 import UserIcon from './Icons/UserIcon';
 import { useDispatch } from 'react-redux';
-import { setPage } from 'public/redux/actions';
+import { TaskAction } from 'public';
 
 const AttendBtn: React.VFC = () => {
   const dispatch = useDispatch();
+  const taskAction = new TaskAction();
   return (
     <Button
       bg="white"
       _hover={{ bg: 'gray.100' }}
       width="250px"
       h="50px"
-      onClick={() => dispatch(setPage('attend'))}
+      onClick={() => dispatch(taskAction.setPage('attend'))}
       _focus={{ boxShadow: 'none' }}
       pr="50"
     >

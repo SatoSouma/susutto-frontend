@@ -5,8 +5,11 @@ import {
   DeadlineSelector,
   TaskContent,
 } from 'public';
+import { useTaskAdd } from './useTaskAdd';
 
 const TaskAdd: React.VFC = () => {
+  const [onClickSend, result] = useTaskAdd();
+
   return (
     <Box
       border="1px"
@@ -34,7 +37,12 @@ const TaskAdd: React.VFC = () => {
           <TaskContent />
         </GridItem>
         <GridItem colSpan={2} textAlign="center">
-          <Button bg="skyBlue.100" color="white" w="20">
+          <Button
+            bg="skyBlue.100"
+            color="white"
+            w="20"
+            onClick={(e) => onClickSend(e)}
+          >
             作成
           </Button>
         </GridItem>

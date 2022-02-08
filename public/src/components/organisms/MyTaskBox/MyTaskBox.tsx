@@ -20,13 +20,6 @@ const MyTaskBox: VFC = () => {
         >
           <MyTaskList />
           <MyTaskList />
-          <MyTaskList />
-          <MyTaskList />
-          <MyTaskList />
-          <MyTaskList />
-          <MyTaskList />
-          <MyTaskList />
-          <MyTaskList />
         </Box>
       </Box>
     </Box>

@@ -9,30 +9,36 @@ import {
 } from 'public';
 
 import { useSelector } from 'react-redux';
-import { work } from 'public';
+import { TaskState } from 'public';
 import { TaskAdd, TaskList } from 'public';
+import moment from 'moment';
 
 const AdminMainTemplete: React.VFC = () => {
-  const reWork = useSelector(work);
-  console.log(reWork);
+  const taskState = new TaskState();
+  const rePage = useSelector(taskState.page);
+  const nowDate: string = moment().format('YYYY-MM-DD'); //現在時刻
 
-  let page: any;
+  console.log('現在時刻' + nowDate);
 
-  switch (reWork) {
+  console.log('page' + rePage);
+
+  let currentPage: any;
+
+  switch (rePage) {
     case 'list':
-      page = <TaskList />;
+      currentPage = <TaskList />;
       break;
 
     case 'add':
-      page = <TaskAdd />;
+      currentPage = <TaskAdd />;
       break;
 
     case 'attend':
-      page = <Text>attend</Text>;
+      currentPage = <Text>attend</Text>;
       break;
 
     default:
-      page = <Text>error</Text>;
+      currentPage = <Text>error</Text>;
       break;
   }
 
@@ -71,7 +77,7 @@ const AdminMainTemplete: React.VFC = () => {
           border="2px"
           borderColor="gray.200"
         >
-          {page}
+          {currentPage}
         </GridItem>
       </Grid>
     </Box>

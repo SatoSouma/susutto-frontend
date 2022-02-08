@@ -18,6 +18,16 @@ const AllTaskBox: VFC = () => {
         overflow="auto"
       >
         <AllTaskList />
+        <AllTaskList />
+        <AllTaskList />
+        <AllTaskList />
+        <AllTaskList />
+        <AllTaskList />
+        <AllTaskList />
+        <AllTaskList />
+        <AllTaskList />
+        <AllTaskList />
+        <AllTaskList />
       </Box>
     </Box>
   );

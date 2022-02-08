@@ -45,4 +45,5 @@ export { default as LoginTemplete } from './src/components/templates/Login/Login
 export { default as AdminMainTemplete } from './src/components/templates/Admin/AdminMain/AdminMainTemplete';
 
 // redux state
-export { default as work } from './redux/selectors';
+export { default as TaskState } from './redux/selectors';
+export { default as TaskAction } from './redux/actions';

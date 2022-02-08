@@ -5,7 +5,7 @@ import styles from './HeaderText.module.scss';
 const AdminHeaderText: VFC = () => {
   return (
     <Text
-      color="gray.900"
+      color="gray.600"
       fontSize="1em"
       textAlign="center"
       pt="4"
@@ -15,7 +15,7 @@ const AdminHeaderText: VFC = () => {
       borderBottom="1px"
       borderColor="gray.300"
     >
-      chakra 管理画面
+      ススット 管理画面
     </Text>
   );
 };

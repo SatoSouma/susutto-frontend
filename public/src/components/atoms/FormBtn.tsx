@@ -2,10 +2,11 @@ import { Button, Text } from '@chakra-ui/react';
 import AirPlaneIcon from './Icons/AirPlaneIcon';
 import DesktopIcon from './Icons/DesktopIcon';
 import { useDispatch } from 'react-redux';
-import { setPage } from 'public/redux/actions';
+import { TaskAction } from 'public';
 
 const FormBtn: React.VFC = () => {
   const dispatch = useDispatch();
+  const taskAction = new TaskAction();
 
   return (
     <Button
@@ -13,7 +14,7 @@ const FormBtn: React.VFC = () => {
       _hover={{ bg: 'gray.100' }}
       width="250px"
       h="50px"
-      onClick={() => dispatch(setPage('add'))}
+      onClick={() => dispatch(taskAction.setPage('add'))}
       _focus={{ boxShadow: 'none' }}
       pr="150"
     >

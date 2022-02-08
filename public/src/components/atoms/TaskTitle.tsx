@@ -1,9 +1,17 @@
-import { Input, Text } from '@chakra-ui/react';
+import { Input } from '@chakra-ui/react';
+import { useDispatch } from 'react-redux';
+import { TaskAction } from 'public';
 
 const TaskTitle: React.VFC = () => {
+  const dispatch = useDispatch();
+  const taskAction = new TaskAction();
   return (
     <>
-      <Input placeholder="業務タイトル" boxShadow="inner" />
+      <Input
+        placeholder="業務タイトル"
+        boxShadow="inner"
+        onChange={(e) => dispatch(taskAction.setTaskName(e.target.value))}
+      />
     </>
   );
 };
