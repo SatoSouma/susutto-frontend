@@ -19,9 +19,9 @@ const DepartmentSelector: React.VFC = () => {
         color="gray.600"
         onChange={(e) => dispatch(taskAction.setDepartment(e.target.value))}
       >
-        <option value="agricultural">農産</option>
-        <option value="livestock">畜産</option>
-        <option value="fisheries">水産</option>
+        <option value="1">農産</option>
+        <option value="2">畜産</option>
+        <option value="3">水産</option>
         <option value="delica">デリカ</option>
         <option value="glossary">グロッサリー</option>
         <option value="serviceCounter">サービスカウンター</option>

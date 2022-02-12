@@ -11,8 +11,16 @@ class TaskState {
     return state.task.taskDetail;
   };
 
-  deadLine = (state: any) => {
-    return state.task.deadLine;
+  deadLineDay = (state: any) => {
+    return state.task.deadLineDay;
+  };
+
+  deadLineMinutes = (state: any) => {
+    return state.task.deadLineMinutes;
+  };
+
+  deadLineHour = (state: any) => {
+    return state.task.deadLineHour;
   };
 
   department = (state: any) => {

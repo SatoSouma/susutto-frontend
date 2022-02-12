@@ -1,4 +1,12 @@
-import { PAGE, TASKNAME, TASKDETAIL, DEPARTMENT, DEADLINE } from './types';
+import {
+  PAGE,
+  TASKNAME,
+  TASKDETAIL,
+  DEPARTMENT,
+  DEADLINEDAY,
+  DEADLINEMINUTES,
+  DEADLINEHOUR,
+} from './types';
 
 class TaskAction {
   setPage = (input: string) => ({
@@ -21,8 +29,18 @@ class TaskAction {
     input,
   });
 
-  setDeadLine = (input: string) => ({
-    type: DEADLINE,
+  setDeadLineDay = (input: string) => ({
+    type: DEADLINEDAY,
+    input,
+  });
+
+  setDeadLineHour = (input: string) => ({
+    type: DEADLINEHOUR,
+    input,
+  });
+
+  setDeadLineMinutes = (input: string) => ({
+    type: DEADLINEMINUTES,
     input,
   });
 }

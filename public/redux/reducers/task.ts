@@ -1,6 +1,8 @@
 import {
   PAGE,
-  DEADLINE,
+  DEADLINEDAY,
+  DEADLINEHOUR,
+  DEADLINEMINUTES,
   DEPARTMENT,
   TASKDETAIL,
   TASKNAME,
@@ -11,7 +13,9 @@ type state = {
   taskName: string;
   taskDetail: string;
   department: string;
-  deadLine: string;
+  deadLineDay: string;
+  deadLineMinutes: string;
+  deadLineHour: string;
 };
 
 type action = {
@@ -24,7 +28,9 @@ const initianAppState: state = {
   taskName: '',
   taskDetail: '',
   department: '',
-  deadLine: '',
+  deadLineDay: '',
+  deadLineMinutes: '',
+  deadLineHour: '',
 };
 
 const task = (state = initianAppState, action: action) => {
@@ -38,8 +44,14 @@ const task = (state = initianAppState, action: action) => {
     case TASKDETAIL:
       return { ...state, taskDetail: action.input };
 
-    case DEADLINE:
-      return { ...state, deadLine: action.input };
+    case DEADLINEDAY:
+      return { ...state, deadLineDay: action.input };
+
+    case DEADLINEHOUR:
+      return { ...state, deadLineHour: action.input };
+
+    case DEADLINEMINUTES:
+      return { ...state, deadLineMinutes: action.input };
 
     case DEPARTMENT:
       return { ...state, department: action.input };

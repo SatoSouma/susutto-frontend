@@ -11,7 +11,6 @@ const AdminHeaderText: VFC = () => {
       pt="4"
       h="60px"
       fontWeight="solid"
-      fontSize="20"
       borderBottom="1px"
       borderColor="gray.300"
     >
