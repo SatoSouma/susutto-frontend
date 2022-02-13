@@ -10,7 +10,15 @@ import {
 } from '@chakra-ui/react';
 import { HandleBtn } from 'public';
 
-const AllTaskList: VFC = () => {
+type props = {
+  id: number;
+  taskName: string;
+  taskDetail: string;
+  deadLine: string;
+  putFunc: Function;
+};
+
+const AllTaskList: VFC<props> = (props: props) => {
   return (
     <Box>
       <Accordion allowToggle>
@@ -25,18 +33,17 @@ const AllTaskList: VFC = () => {
           <Heading>
             <AccordionButton _focus={{ boxShadow: 'none' }}>
               <Box flex="1" textAlign="left">
-                <Box color="gray.700">業務名</Box>
+                <Box color="gray.700">{props.taskName}</Box>
                 <Box color="gray.500" fontSize="0.5em">
-                  期限
+                  {props.deadLine}
                 </Box>
               </Box>
               <AccordionIcon />
             </AccordionButton>
           </Heading>
           <AccordionPanel pb={4} fontSize="20">
-            業務内容 業務内容 業務内容 業務内容 業務内容 業務内容 業務内容
-            業務内容 業務内容
-            <HandleBtn />
+            {props.taskDetail}
+            <HandleBtn id={props.id} putFunc={props.putFunc} />
           </AccordionPanel>
         </AccordionItem>
       </Accordion>

@@ -40,7 +40,7 @@ export function useTaskAdd() {
         body: JSON.stringify(form),
         headers: { 'Content-Type': 'application/json' },
       })
-        .then((res) => setReselt(res))
+        .then((res) => console.log(res))
         .catch((error) => console.log(error));
     } else {
       renderFlgRef.current = true;
