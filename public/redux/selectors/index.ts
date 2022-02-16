@@ -26,6 +26,10 @@ class TaskState {
   department = (state: any) => {
     return state.task.department;
   };
+
+  socketFlug = (state: any) => {
+    return state.task.socketFlug;
+  };
 }
 
 export default TaskState;
