@@ -4,16 +4,13 @@ import styles from './HandleBtn.module.scss';
 
 type props = {
   id: number;
-  putFunc: Function;
+  onPutClick: Function;
 };
 
 const HandleBtn: VFC<props> = (props: props) => {
   return (
     <Box paddingTop="1em" textAlign="right">
-      <Button
-        colorScheme="blue"
-        onClick={(e: React.MouseEvent) => props.putFunc(e, props.id)}
-      >
+      <Button colorScheme="blue" onClick={() => props.onPutClick(props.id)}>
         担当する
       </Button>
     </Box>

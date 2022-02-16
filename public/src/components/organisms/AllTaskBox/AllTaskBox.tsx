@@ -38,7 +38,7 @@ const AllTaskBox: VFC = () => {
               taskName={val.taskName}
               taskDetail={val.taskDetail}
               deadLine={moment(val.deadLine).format('YYYY/MM/DD HH:mm')}
-              putFunc={onPutClick}
+              onPutClick={onPutClick}
             />
           );
         })}

@@ -1,5 +1,5 @@
 import { VFC } from 'react';
-import { AdminHeader, AdminTaskList, AdminFooter } from 'public';
+import { AdminTaskList, AdminFooter } from 'public';
 import {
   Tabs,
   TabList,
@@ -9,8 +9,10 @@ import {
   Text,
   Box,
 } from '@chakra-ui/react';
+import { useTaskList } from './useTaskList';
 
 const TaskList: VFC = () => {
+  const [test] = useTaskList();
   return (
     <Box
       border="1px"
@@ -21,6 +23,7 @@ const TaskList: VFC = () => {
       bg="white"
       color="gray.500"
     >
+      <Text>{test}</Text>
       <Tabs isFitted variant="enclosed">
         <TabList
           mb="1em"

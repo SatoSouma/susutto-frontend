@@ -41,7 +41,7 @@ const TaskAdd: React.VFC = () => {
             bg="skyBlue.100"
             color="white"
             w="20"
-            onClick={(e) => onClickSend(e)}
+            onClick={() => onClickSend()}
           >
             作成
           </Button>

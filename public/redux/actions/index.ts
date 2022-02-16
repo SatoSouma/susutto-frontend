@@ -6,6 +6,7 @@ import {
   DEADLINEDAY,
   DEADLINEMINUTES,
   DEADLINEHOUR,
+  SOCKETFLUG,
 } from './types';
 
 class TaskAction {
@@ -41,6 +42,11 @@ class TaskAction {
 
   setDeadLineMinutes = (input: string) => ({
     type: DEADLINEMINUTES,
+    input,
+  });
+
+  setSocketFlug = (input: boolean) => ({
+    type: SOCKETFLUG,
     input,
   });
 }

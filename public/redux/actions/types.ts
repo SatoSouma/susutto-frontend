@@ -12,3 +12,5 @@ export const DEADLINEDAY: string = 'DEADLINEDAY';
 export const DEADLINEMINUTES: string = 'DEADLINEMINUTES';
 
 export const DEADLINEHOUR: string = 'DEADLINEHOUR';
+
+export const SOCKETFLUG: string = 'SOCKETFLUG';

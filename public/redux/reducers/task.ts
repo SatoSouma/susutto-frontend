@@ -6,6 +6,7 @@ import {
   DEPARTMENT,
   TASKDETAIL,
   TASKNAME,
+  SOCKETFLUG,
 } from '../actions/types';
 
 type state = {
@@ -16,10 +17,11 @@ type state = {
   deadLineDay: string;
   deadLineMinutes: string;
   deadLineHour: string;
+  socketFlug: boolean;
 };
 
 type action = {
-  type: string;
+  type: string | boolean;
   input: string;
 };
 
@@ -31,6 +33,7 @@ const initianAppState: state = {
   deadLineDay: '',
   deadLineMinutes: '',
   deadLineHour: '',
+  socketFlug: false,
 };
 
 const task = (state = initianAppState, action: action) => {
@@ -55,6 +58,9 @@ const task = (state = initianAppState, action: action) => {
 
     case DEPARTMENT:
       return { ...state, department: action.input };
+
+    case SOCKETFLUG:
+      return { ...state, socketFlug: action.input };
 
     default:
       return state;
