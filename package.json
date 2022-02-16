@@ -23,6 +23,7 @@
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
     "sass": "^1.45.0",
+    "socket.io-client": "^4.4.1",
     "typescript": "^4.5.3",
     "yarn": "^1.22.17"
   },
@@ -30,6 +31,7 @@
     "@chakra-ui/react": "^1.7.3",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "@types/socket.io-client": "^3.0.0",
     "eslint": "8.4.1",
     "eslint-config-next": "12.0.7",
     "framer-motion": "^4.1.17",

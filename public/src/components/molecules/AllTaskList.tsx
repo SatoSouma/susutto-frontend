@@ -15,7 +15,7 @@ type props = {
   taskName: string;
   taskDetail: string;
   deadLine: string;
-  putFunc: Function;
+  onPutClick: Function;
 };
 
 const AllTaskList: VFC<props> = (props: props) => {
@@ -43,7 +43,7 @@ const AllTaskList: VFC<props> = (props: props) => {
           </Heading>
           <AccordionPanel pb={4} fontSize="20">
             {props.taskDetail}
-            <HandleBtn id={props.id} putFunc={props.putFunc} />
+            <HandleBtn id={props.id} onPutClick={props.onPutClick} />
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
