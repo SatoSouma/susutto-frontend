@@ -8,9 +8,10 @@ import {
   EmployeeFooter,
 } from 'public';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
-import { useSelector } from 'react-redux';
+import { useMainTemplete } from './useMainTemplete';
 
 const EmployeeTemplate: VFC = () => {
+  const [socket] = useMainTemplete();
   return (
     <Box>
       <EmployeeHeader />
@@ -40,10 +41,10 @@ const EmployeeTemplate: VFC = () => {
           </TabList>
           <TabPanels pt="1em">
             <TabPanel>
-              <MyTaskBox />
+              <MyTaskBox socket={socket} />
             </TabPanel>
             <TabPanel>
-              <AllTaskBox />
+              <AllTaskBox socket={socket} />
             </TabPanel>
           </TabPanels>
         </Tabs>

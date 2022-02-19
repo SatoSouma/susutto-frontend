@@ -6,24 +6,11 @@ import {
   DEPARTMENT,
   TASKDETAIL,
   TASKNAME,
-  SOCKETFLUG,
+  TASKINFO,
+  ADMINTASKINFO,
 } from '../actions/types';
 
-type state = {
-  page: string;
-  taskName: string;
-  taskDetail: string;
-  department: string;
-  deadLineDay: string;
-  deadLineMinutes: string;
-  deadLineHour: string;
-  socketFlug: boolean;
-};
-
-type action = {
-  type: string | boolean;
-  input: string;
-};
+import { action, state } from 'types/reduxTypes';
 
 const initianAppState: state = {
   page: 'list',
@@ -33,7 +20,8 @@ const initianAppState: state = {
   deadLineDay: '',
   deadLineMinutes: '',
   deadLineHour: '',
-  socketFlug: false,
+  taskInfo: undefined,
+  adminTaskInfo: undefined,
 };
 
 const task = (state = initianAppState, action: action) => {
@@ -59,8 +47,11 @@ const task = (state = initianAppState, action: action) => {
     case DEPARTMENT:
       return { ...state, department: action.input };
 
-    case SOCKETFLUG:
-      return { ...state, socketFlug: action.input };
+    case TASKINFO:
+      return { ...state, taskInfo: action.input };
+
+    case ADMINTASKINFO:
+      return { ...state, adminTaskInfo: action.input };
 
     default:
       return state;

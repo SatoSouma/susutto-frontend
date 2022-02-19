@@ -6,8 +6,11 @@ import {
   DEADLINEDAY,
   DEADLINEMINUTES,
   DEADLINEHOUR,
-  SOCKETFLUG,
+  TASKINFO,
+  ADMINTASKINFO,
 } from './types';
+
+import { taskInfoType, adminTaskInfoType } from 'types/reduxTypes';
 
 class TaskAction {
   setPage = (input: string) => ({
@@ -45,8 +48,13 @@ class TaskAction {
     input,
   });
 
-  setSocketFlug = (input: boolean) => ({
-    type: SOCKETFLUG,
+  setTaskInfo = (input: taskInfoType) => ({
+    type: TASKINFO,
+    input,
+  });
+
+  setAdminTasks = (input: adminTaskInfoType) => ({
+    type: ADMINTASKINFO,
     input,
   });
 }

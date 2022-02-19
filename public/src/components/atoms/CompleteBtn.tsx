@@ -1,11 +1,17 @@
 import { VFC } from 'react';
 import { Box, Button } from '@chakra-ui/react';
-import styles from './CompleteBtn.module.scss';
 
-const CompleteBtn: VFC = () => {
+type props = {
+  id: number;
+  onPutClick: Function;
+};
+
+const CompleteBtn: VFC<props> = (props: props) => {
   return (
     <Box paddingTop="1em" textAlign="right">
-      <Button colorScheme="blue">完了</Button>
+      <Button colorScheme="blue" onClick={() => props.onPutClick(props.id)}>
+        完了
+      </Button>
     </Box>
   );
 };

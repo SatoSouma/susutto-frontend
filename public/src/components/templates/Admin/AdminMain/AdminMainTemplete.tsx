@@ -11,16 +11,13 @@ import {
 import { useSelector } from 'react-redux';
 import { TaskState } from 'public';
 import { TaskAdd, TaskList } from 'public';
-import moment from 'moment';
+import { useAdminMainTemplete } from './useAdminMainTemplete';
 
 const AdminMainTemplete: React.VFC = () => {
   const taskState = new TaskState();
   const rePage = useSelector(taskState.page);
-  const nowDate: string = moment().format('YYYY-MM-DD'); //現在時刻
-
-  console.log('現在時刻' + nowDate);
-
-  console.log('page' + rePage);
+  const result = useSelector(taskState.adminTaskInfo);
+  const [socket] = useAdminMainTemplete();
 
   let currentPage: any;
 
@@ -44,6 +41,7 @@ const AdminMainTemplete: React.VFC = () => {
 
   return (
     <Box>
+      {console.log(result)}
       <Grid templateColumns="repeat(5, 1fr)">
         <GridItem colSpan={1}>
           <AdminHeaderText />

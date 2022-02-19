@@ -1,9 +1,11 @@
 import { useEffect, useState, useRef } from 'react';
-import { useSelector } from 'react-redux';
-import { TaskState } from 'public';
+import { useDispatch, useSelector } from 'react-redux';
+import { TaskAction, TaskState } from 'public';
 
 export function useTaskAdd() {
   const [result, setReselt] = useState<any>();
+  const dispatch = useDispatch();
+  const taskAction = new TaskAction();
 
   const taskState = new TaskState();
   const taskName = useSelector(taskState.taskName);
@@ -31,7 +33,7 @@ export function useTaskAdd() {
       body: JSON.stringify(form),
       headers: { 'Content-Type': 'application/json' },
     })
-      .then((res) => console.log(res))
+      .then((res) => dispatch(taskAction.setPage('list')))
       .catch((error) => console.log(error));
   };
 

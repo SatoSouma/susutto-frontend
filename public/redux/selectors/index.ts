@@ -27,8 +27,12 @@ class TaskState {
     return state.task.department;
   };
 
-  socketFlug = (state: any) => {
-    return state.task.socketFlug;
+  taskInfo = (state: any) => {
+    return state.task.taskInfo;
+  };
+
+  adminTaskInfo = (state: any) => {
+    return state.task.adminTaskInfo;
   };
 }
 

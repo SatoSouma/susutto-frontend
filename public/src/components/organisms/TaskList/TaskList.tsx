@@ -1,5 +1,5 @@
 import { VFC } from 'react';
-import { AdminTaskList, AdminFooter } from 'public';
+import { AdminTaskList, TaskState, AdminTabHeader } from 'public';
 import {
   Tabs,
   TabList,
@@ -8,12 +8,17 @@ import {
   TabPanel,
   Text,
   Box,
+  Grid,
+  GridItem,
 } from '@chakra-ui/react';
-import { useTaskList } from './useTaskList';
+import { useSelector } from 'react-redux';
+import { adminTaskTypes } from 'types/reduxTypes';
 
 const TaskList: VFC = () => {
-  const [test] = useTaskList();
-  return (
+  const taskState = new TaskState();
+  const result = useSelector(taskState.adminTaskInfo);
+
+  return !!result ? (
     <Box
       border="1px"
       borderRadius="5px"
@@ -23,7 +28,6 @@ const TaskList: VFC = () => {
       bg="white"
       color="gray.500"
     >
-      <Text>{test}</Text>
       <Tabs isFitted variant="enclosed">
         <TabList
           mb="1em"
@@ -76,18 +80,12 @@ const TaskList: VFC = () => {
         <Box h="550">
           <TabPanels>
             <TabPanel maxHeight="550" minHeight="100" overflow="auto">
-              <AdminTaskList color="LimeGreen" />
-              <AdminTaskList color="LimeGreen" />
-              <AdminTaskList color="skyBlue" />
-              <AdminTaskList color="vividRed" />
-              <AdminTaskList color="skyBlue" />
-              <AdminTaskList color="LimeGreen" />
-              <AdminTaskList color="LimeGreen" />
-              <AdminTaskList color="LimeGreen" />
-              <AdminTaskList color="skyBlue" />
-              <AdminTaskList color="vividRed" />
-              <AdminTaskList color="vividRed" />
-              <AdminTaskList color="skyBlue" />
+              <AdminTabHeader />
+              {result.doing.map((val: adminTaskTypes) => {
+                return (
+                  <AdminTaskList key={val.id} color={val.departmentColor} />
+                );
+              })}
             </TabPanel>
             <TabPanel maxHeight="550" minHeight="100" overflow="auto">
               <AdminTaskList color="LimeGreen" />
@@ -106,6 +104,8 @@ const TaskList: VFC = () => {
         </Box>
       </Tabs>
     </Box>
+  ) : (
+    <></>
   );
 };
 
