@@ -11,13 +11,12 @@ import {
 import { useSelector } from 'react-redux';
 import { TaskState } from 'public';
 import { TaskAdd, TaskList } from 'public';
-import { useAdminMainTemplete } from './useAdminMainTemplete';
 import TaskFix from '../TaskFix/TaskFix';
+import { props } from 'types/propsTypes';
 
-const AdminMainTemplete: React.VFC = () => {
+const AdminMainTemplete: React.VFC<props> = ({ socket }) => {
   const taskState = new TaskState();
   const rePage = useSelector(taskState.page);
-  const [socket] = useAdminMainTemplete();
 
   let currentPage: any;
 

@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import { LoginTemplate } from 'public';
 import Head from 'next/head';
 
-const loginPage: NextPage = () => {
+const loginPage: NextPage = ({}) => {
   return (
     <>
       <Head>
@@ -12,5 +12,10 @@ const loginPage: NextPage = () => {
     </>
   );
 };
+
+export function getServerSideProps() {
+  // props を通じて Page に data を渡す
+  return { props: {} };
+}
 
 export default loginPage;
