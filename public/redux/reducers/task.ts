@@ -8,6 +8,7 @@ import {
   TASKNAME,
   TASKINFO,
   ADMINTASKINFO,
+  TASKFIX,
 } from '../actions/types';
 
 import { action, state } from 'types/reduxTypes';
@@ -22,6 +23,7 @@ const initianAppState: state = {
   deadLineHour: '',
   taskInfo: undefined,
   adminTaskInfo: undefined,
+  taskFix: undefined,
 };
 
 const task = (state = initianAppState, action: action) => {
@@ -52,6 +54,9 @@ const task = (state = initianAppState, action: action) => {
 
     case ADMINTASKINFO:
       return { ...state, adminTaskInfo: action.input };
+
+    case TASKFIX:
+      return { ...state, taskFix: action.input };
 
     default:
       return state;

@@ -8,15 +8,18 @@ import {
   TabPanel,
   Text,
   Box,
-  Grid,
-  GridItem,
 } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
 import { adminTaskTypes } from 'types/reduxTypes';
+import moment from 'moment-timezone';
+import { useTaskList } from './useTaskList';
+
+moment.tz.setDefault('Asia/Tokyo');
 
 const TaskList: VFC = () => {
   const taskState = new TaskState();
   const result = useSelector(taskState.adminTaskInfo);
+  const [onClickMove] = useTaskList();
 
   return !!result ? (
     <Box
@@ -80,25 +83,103 @@ const TaskList: VFC = () => {
         <Box h="550">
           <TabPanels>
             <TabPanel maxHeight="550" minHeight="100" overflow="auto">
-              <AdminTabHeader />
+              {result.doing.length !== 0 ? (
+                <AdminTabHeader />
+              ) : (
+                <Text color="skyBlue.300">現在進行中の業務はありません。</Text>
+              )}
+
               {result.doing.map((val: adminTaskTypes) => {
+                console.log('val');
+
+                val.deadLine = val.deadLine.replace(/T/g, ' ');
+                val.deadLine = val.deadLine.replace(/Z/g, ' ');
                 return (
-                  <AdminTaskList key={val.id} color={val.departmentColor} />
+                  <AdminTaskList
+                    key={val.id}
+                    id={val.id}
+                    taskName={val.taskName}
+                    taskDetail={val.taskDetail}
+                    deadLine={moment(val.deadLine).format('YYYY/MM/DD HH:mm')}
+                    departmentColor={val.departmentColor}
+                    departmentName={val.departmentName}
+                    employeeName={val.employeeName}
+                    onClickMove={onClickMove}
+                  />
                 );
               })}
             </TabPanel>
             <TabPanel maxHeight="550" minHeight="100" overflow="auto">
-              <AdminTaskList color="LimeGreen" />
-              <AdminTaskList color="LimeGreen" />
+              {result.todo.length !== 0 ? (
+                <AdminTabHeader />
+              ) : (
+                <Text color="skyBlue.300">業務予定はありません。</Text>
+              )}
+              {result.todo.map((val: adminTaskTypes) => {
+                val.deadLine = val.deadLine.replace(/T/g, ' ');
+                val.deadLine = val.deadLine.replace(/Z/g, ' ');
+                return (
+                  <AdminTaskList
+                    key={val.id}
+                    id={val.id}
+                    taskName={val.taskName}
+                    taskDetail={val.taskDetail}
+                    deadLine={moment(val.deadLine).format('YYYY/MM/DD HH:mm')}
+                    departmentColor={val.departmentColor}
+                    departmentName={val.departmentName}
+                    employeeName={val.employeeName}
+                    onClickMove={onClickMove}
+                  />
+                );
+              })}
             </TabPanel>
             <TabPanel maxHeight="550" minHeight="100" overflow="auto">
-              <AdminTaskList color="skyBlue" />
-              <AdminTaskList color="LimeGreen" />
+              {result.noAchieve.length !== 0 ? (
+                <AdminTabHeader />
+              ) : (
+                <Text color="skyBlue.300">未達成業務はありません。</Text>
+              )}
+              {result.noAchieve.map((val: adminTaskTypes) => {
+                val.deadLine = val.deadLine.replace(/T/g, ' ');
+                val.deadLine = val.deadLine.replace(/Z/g, ' ');
+                return (
+                  <AdminTaskList
+                    key={val.id}
+                    id={val.id}
+                    taskName={val.taskName}
+                    taskDetail={val.taskDetail}
+                    deadLine={moment(val.deadLine).format('YYYY/MM/DD HH:mm')}
+                    departmentColor={val.departmentColor}
+                    departmentName={val.departmentName}
+                    employeeName={val.employeeName}
+                    onClickMove={onClickMove}
+                  />
+                );
+              })}
             </TabPanel>
             <TabPanel maxHeight="550" minHeight="100" overflow="auto">
-              <AdminTaskList color="vividRed" />
-              <AdminTaskList color="skyBlue" />
-              <AdminTaskList color="LimeGreen" />
+              {result.done.length !== 0 ? (
+                <AdminTabHeader />
+              ) : (
+                <Text color="skyBlue.300">達成業務はありません。</Text>
+              )}
+              {result.done.map((val: adminTaskTypes) => {
+                val.deadLine = val.deadLine.replace(/T/g, ' ');
+                val.deadLine = val.deadLine.replace(/Z/g, ' ');
+                return (
+                  <AdminTaskList
+                    key={val.id}
+                    id={val.id}
+                    taskName={val.taskName}
+                    taskDetail={val.taskDetail}
+                    deadLine={moment(val.deadLine).format('YYYY/MM/DD HH:mm')}
+                    departmentColor={val.departmentColor}
+                    departmentName={val.departmentName}
+                    employeeName={val.employeeName}
+                    onClickMove={onClickMove}
+                  />
+                );
+              })}
             </TabPanel>
           </TabPanels>
         </Box>

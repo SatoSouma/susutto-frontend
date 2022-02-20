@@ -20,14 +20,12 @@ const AllTaskBox: VFC<props> = (props: props) => {
 
   return !!result ? (
     <Box boxShadow="lg" borderRadius="10px">
-      <AllTaskText />
       <Box
         paddingBottom="1em"
-        paddingTop="1em"
+        paddingTop="2em"
         bg="cream.100"
-        borderBottomLeftRadius="10px"
-        borderBottomRightRadius="10px"
-        minHeight="100"
+        borderRadius="10px"
+        minHeight="200"
         maxHeight="480"
         overflow="auto"
       >

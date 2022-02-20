@@ -28,6 +28,14 @@ export type adminTaskInfoType = {
   noAchieve: adminTaskTypes;
 };
 
+export type taskFix = {
+  id: number;
+  taskName: string;
+  taskDetail: string;
+  deadLine: string;
+  departmentName: string;
+};
+
 export type state = {
   page: string;
   taskName: string;
@@ -38,6 +46,7 @@ export type state = {
   deadLineHour: string;
   taskInfo: undefined | taskInfoType;
   adminTaskInfo: undefined | adminTaskInfoType;
+  taskFix: undefined | taskFix;
 };
 
 export type action = {

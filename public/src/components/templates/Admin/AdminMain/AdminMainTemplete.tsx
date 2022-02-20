@@ -12,11 +12,11 @@ import { useSelector } from 'react-redux';
 import { TaskState } from 'public';
 import { TaskAdd, TaskList } from 'public';
 import { useAdminMainTemplete } from './useAdminMainTemplete';
+import TaskFix from '../TaskFix/TaskFix';
 
 const AdminMainTemplete: React.VFC = () => {
   const taskState = new TaskState();
   const rePage = useSelector(taskState.page);
-  const result = useSelector(taskState.adminTaskInfo);
   const [socket] = useAdminMainTemplete();
 
   let currentPage: any;
@@ -27,11 +27,15 @@ const AdminMainTemplete: React.VFC = () => {
       break;
 
     case 'add':
-      currentPage = <TaskAdd />;
+      currentPage = <TaskAdd socket={socket} />;
       break;
 
     case 'attend':
       currentPage = <Text>attend</Text>;
+      break;
+
+    case 'fix':
+      currentPage = <TaskFix socket={socket} />;
       break;
 
     default:
@@ -41,7 +45,6 @@ const AdminMainTemplete: React.VFC = () => {
 
   return (
     <Box>
-      {console.log(result)}
       <Grid templateColumns="repeat(5, 1fr)">
         <GridItem colSpan={1}>
           <AdminHeaderText />

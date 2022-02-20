@@ -34,6 +34,10 @@ class TaskState {
   adminTaskInfo = (state: any) => {
     return state.task.adminTaskInfo;
   };
+
+  taskFix = (state: any) => {
+    return state.task.taskFix;
+  };
 }
 
 export default TaskState;

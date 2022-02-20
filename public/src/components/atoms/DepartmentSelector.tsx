@@ -22,9 +22,9 @@ const DepartmentSelector: React.VFC = () => {
         <option value="1">農産</option>
         <option value="2">畜産</option>
         <option value="3">水産</option>
-        <option value="delica">デリカ</option>
-        <option value="glossary">グロッサリー</option>
-        <option value="serviceCounter">サービスカウンター</option>
+        <option value="5">デリカ</option>
+        <option value="4">グロッサリー</option>
+        <option value="6">サービスカウンター</option>
       </Select>
     </Box>
   );

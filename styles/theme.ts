@@ -15,7 +15,16 @@ const theme = extendTheme({
       200: '#AC0922',
     },
     cream: {
-      100: '#f7f5e1',
+      100: '#fffaf0',
+    },
+    vividYellow: {
+      100: '#ffd700',
+    },
+    thinPink: {
+      100: '#ee82ee',
+    },
+    thinRightBlue: {
+      100: '#00ffff',
     },
   },
 });

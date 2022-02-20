@@ -8,9 +8,10 @@ import {
   DEADLINEHOUR,
   TASKINFO,
   ADMINTASKINFO,
+  TASKFIX,
 } from './types';
 
-import { taskInfoType, adminTaskInfoType } from 'types/reduxTypes';
+import { taskInfoType, adminTaskInfoType, taskFix } from 'types/reduxTypes';
 
 class TaskAction {
   setPage = (input: string) => ({
@@ -55,6 +56,11 @@ class TaskAction {
 
   setAdminTasks = (input: adminTaskInfoType) => ({
     type: ADMINTASKINFO,
+    input,
+  });
+
+  setTaskFix = (input: taskFix) => ({
+    type: TASKFIX,
     input,
   });
 }

@@ -30,3 +30,21 @@ export function socketTaskUpdate(socket: socketio.Socket) {
       .catch(() => socket.emit('chResult', { message: false }));
   });
 }
+
+export function socketTaskCreate(socket: socketio.Socket) {
+  socket.on('crtask', (data) => {
+    console.log('status変更');
+    fetch(`${process.env.NEXT_PUBLIC_URL}/create`, {
+      method: 'POST',
+      body: JSON.stringify({
+        taskName: data.taskName,
+        taskDetail: data.taskDetail,
+        deadLine: data.deadLine,
+        department: data.department,
+      }),
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then(() => socket.emit('crResult', { message: true }))
+      .catch(() => socket.emit('crResult', { message: false }));
+  });
+}
