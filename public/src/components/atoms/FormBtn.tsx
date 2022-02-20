@@ -11,10 +11,10 @@ const FormBtn: React.VFC = () => {
   return (
     <Button
       bg="white"
-      _hover={{ bg: 'gray.100' }}
       width="250px"
       h="50px"
       onClick={() => dispatch(taskAction.setPage('add'))}
+      _hover={{ bg: 'gray.100' }}
       _focus={{ boxShadow: 'none' }}
       pr="150"
     >

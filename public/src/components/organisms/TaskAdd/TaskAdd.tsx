@@ -6,9 +6,10 @@ import {
   TaskContent,
 } from 'public';
 import { useTaskAdd } from './useTaskAdd';
+import { props } from 'types/propsTypes';
 
-const TaskAdd: React.VFC = () => {
-  const [onClickSend, result] = useTaskAdd();
+const TaskAdd: React.VFC<props> = (props: props) => {
+  const [onClickSend] = useTaskAdd(props.socket);
 
   return (
     <Box

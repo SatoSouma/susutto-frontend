@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Grid,
+  Link,
   GridItem,
   Heading,
   Input,
@@ -10,7 +11,6 @@ import {
   Text,
   useMediaQuery,
 } from '@chakra-ui/react';
-import { Breakpoint } from '@chakra-ui/react';
 import { useLogin } from './useLogin';
 
 const LoginTemplate: React.VFC = () => {
@@ -22,12 +22,14 @@ const LoginTemplate: React.VFC = () => {
     userId,
     pass,
     show,
+    error,
   ] = useLogin();
   const [isLargerThan480] = useMediaQuery('(min-width: 480px)');
   return (
     <Box h="800">
-      {console.log(pass)}
-      {console.log(userId)}
+      <Text fontWeight="bold" mt="5" textAlign="center" color="red">
+        {error}
+      </Text>
       <Box mt="10" mb="5" textAlign="center">
         <Heading>ログイン</Heading>
       </Box>
@@ -59,7 +61,7 @@ const LoginTemplate: React.VFC = () => {
               onChange={(e) => onChengeUserId(e.target.value)}
             ></Input>
           </GridItem>
-          <GridItem colSpan={2} textAlign="center">
+          <GridItem colSpan={2} textAlign="center" mt="5">
             <Text fontSize="20" fontWeight="bold">
               パスワード
             </Text>
@@ -82,29 +84,19 @@ const LoginTemplate: React.VFC = () => {
               </InputRightElement>
             </InputGroup>
           </GridItem>
-          <GridItem colSpan={1} mb="5" mt="5" textAlign="center">
+          <GridItem colSpan={2} mt="5" textAlign="center">
             <Button
-              bg="blue.500"
-              size={isLargerThan480 ? 'md' : 'sm'}
-              _hover={{ bg: 'blue.700' }}
-              _active={{ bg: 'blue.700' }}
+              bg="skyBlue.300"
               color="white"
+              _hover={{ bg: 'skyBlue.200' }}
+              _focus={{ boxShadow: 'none' }}
               onClick={() => authentication()}
             >
-              管理者ログイン
+              Login
             </Button>
           </GridItem>
-          <GridItem colSpan={1} mb="5" mt="5" textAlign="center">
-            <Button
-              bg="blue.500"
-              size={isLargerThan480 ? 'md' : 'sm'}
-              _hover={{ bg: 'blue.700' }}
-              _active={{ bg: 'blue.700' }}
-              color="white"
-              onClick={() => authentication()}
-            >
-              一般ログイン
-            </Button>
+          <GridItem colSpan={2} mb="5" mt="5" textAlign="center">
+            <Link color="skyBlue.300">管理者ログインはこちら</Link>
           </GridItem>
         </Grid>
       </Box>

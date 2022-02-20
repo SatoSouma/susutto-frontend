@@ -30,6 +30,7 @@ export { default as DepartmentIcon } from './src/components/atoms/Icons/Departme
 export { default as AllTaskList } from './src/components/molecules/AllTaskList';
 export { default as MyTaskList } from './src/components/molecules/MyTaskList';
 export { default as AdminTaskList } from './src/components/molecules/AdminTaskList';
+export { default as AdminTabHeader } from './src/components/molecules/AdminTabHeader';
 
 // organisms
 export { default as AllTaskBox } from './src/components/organisms/AllTaskBox/AllTaskBox';
@@ -41,8 +42,8 @@ export { default as TaskList } from './src/components/organisms/TaskList/TaskLis
 // templates
 export { default as MainTemplete } from './src/components/templates/Employee/Main/MainTemplete';
 export { default as TaskFix } from './src/components/templates/Admin/TaskFix/TaskFix';
-export { default as LoginTemplete } from './src/components/templates/Login/LoginTemplete';
 export { default as AdminMainTemplete } from './src/components/templates/Admin/AdminMain/AdminMainTemplete';
+export { default as LoginTemplate } from './src/components/templates/Login/LoginTemplate';
 
 // redux state
 export { default as TaskState } from './redux/selectors';

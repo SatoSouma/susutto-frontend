@@ -13,11 +13,9 @@ import {
 import { TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
 import { FixBtn, DepartmentIcon } from 'public';
 
-type props = {
-  color: string;
-};
+import { adminTaskProps } from 'types/propsTypes';
 
-const AdminTaskList: VFC<props> = (props: props) => {
+const AdminTaskList: VFC<adminTaskProps> = (props: adminTaskProps) => {
   return (
     <Accordion allowToggle>
       <AccordionItem
@@ -30,34 +28,45 @@ const AdminTaskList: VFC<props> = (props: props) => {
           <>
             <AccordionButton h="70" _focus={{ boxShadow: 'none' }}>
               <Box flex="1">
-                <Grid templateColumns="repeat(13, 1fr)" color="gray.600">
+                <Grid templateColumns="repeat(17, 1fr)" color="gray.600">
                   <GridItem colSpan={1}>
-                    <DepartmentIcon color={props.color} />
+                    <DepartmentIcon color={props.departmentColor} />
                   </GridItem>
                   <GridItem colSpan={4}>
-                    <Text>業務名</Text>
+                    <Text>{props.taskName}</Text>
                   </GridItem>
                   <GridItem colSpan={4}>
-                    <Text>部署名</Text>
+                    <Text>{props.departmentName}</Text>
                   </GridItem>
                   <GridItem colSpan={4}>
-                    <Text>従業員名</Text>
+                    <Text>{props.deadLine}</Text>
+                  </GridItem>
+                  <GridItem colSpan={4}>
+                    {props.employeeName !== null && !!props.employeeName ? (
+                      <Text>{props.employeeName}</Text>
+                    ) : (
+                      <Text>なし</Text>
+                    )}
                   </GridItem>
                 </Grid>
               </Box>
               {isExpanded ? (
-                <TriangleUpIcon color={`${props.color}.100`} />
+                <TriangleUpIcon color={`${props.departmentColor}.100`} />
               ) : (
-                <TriangleDownIcon color={`${props.color}.100`} />
+                <TriangleDownIcon color={`${props.departmentColor}.100`} />
               )}
             </AccordionButton>
 
             <AccordionPanel pb={4}>
-              業務内容 業務内容 業務内容 業務内容 業務内容 業務内容 業務内容
-              業務内容 業務内容 業務内容 業務内容 業務内容 業務内容 業務内容
-              業務内容 業務内容 業務内容 業務内容 業務内容 業務内容 業務内容
-              業務内容 業務内容 業務内容 業務内容 業務内容 業務内容 業務内容
-              <FixBtn />
+              {props.taskDetail}
+              <FixBtn
+                id={props.id}
+                taskName={props.taskName}
+                taskDetail={props.taskDetail}
+                deadLine={props.deadLine}
+                departmentName={props.departmentName}
+                onClickMove={props.onClickMove}
+              />
             </AccordionPanel>
           </>
         )}

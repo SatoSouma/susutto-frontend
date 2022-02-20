@@ -8,9 +8,14 @@ import {
   EmployeeFooter,
 } from 'public';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
-import { useSelector } from 'react-redux';
+import { parseCookies } from 'nookies';
+import { NextPageContext } from 'next';
 
-const EmployeeTemplate: VFC = () => {
+import { props } from 'types/propsTypes';
+
+const EmployeeTemplate: VFC<props> = ({ socket }, ctx?: NextPageContext) => {
+  const cookie = parseCookies(ctx);
+  const color = cookie.color;
   return (
     <Box>
       <EmployeeHeader />
@@ -18,9 +23,9 @@ const EmployeeTemplate: VFC = () => {
         <Tabs isFitted variant="enclosed">
           <TabList boxShadow="lg">
             <Tab
-              bg="LimeGreen.100"
+              bg={`${color}.100`}
               borderRightColor="white"
-              _selected={{ color: 'white', bg: 'LimeGreen.200' }}
+              _selected={{ color: 'white', bg: `${color}.200` }}
               borderTopLeftRadius="0"
               borderTopRightRadius="0"
               _focus={{ boxShadow: 'none' }}
@@ -28,9 +33,9 @@ const EmployeeTemplate: VFC = () => {
               <MyTaskBtn />
             </Tab>
             <Tab
-              bg="LimeGreen.100"
+              bg={`${color}.100`}
               borderLeftColor="white"
-              _selected={{ color: 'white', bg: 'LimeGreen.200' }}
+              _selected={{ color: 'white', bg: `${color}.200` }}
               borderTopLeftRadius="0"
               borderTopRightRadius="0"
               _focus={{ boxShadow: 'none' }}
@@ -40,10 +45,10 @@ const EmployeeTemplate: VFC = () => {
           </TabList>
           <TabPanels pt="1em">
             <TabPanel>
-              <MyTaskBox />
+              <MyTaskBox socket={socket} />
             </TabPanel>
             <TabPanel>
-              <AllTaskBox />
+              <AllTaskBox socket={socket} />
             </TabPanel>
           </TabPanels>
         </Tabs>

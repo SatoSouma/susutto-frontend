@@ -1,7 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { TaskAction } from 'public';
+import { Socket } from 'socket.io-client';
+import { DefaultEventsMap } from 'socket.io/dist/typed-events';
 
-export function useTaskList() {
+export function useTaskFix(socket: Socket<DefaultEventsMap, DefaultEventsMap>) {
   const taskAction = new TaskAction();
   const dispatch = useDispatch();
 

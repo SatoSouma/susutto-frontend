@@ -13,4 +13,8 @@ export const DEADLINEMINUTES: string = 'DEADLINEMINUTES';
 
 export const DEADLINEHOUR: string = 'DEADLINEHOUR';
 
-export const SOCKETFLUG: string = 'SOCKETFLUG';
+export const TASKINFO: string = 'TASKINFO';
+
+export const ADMINTASKINFO: string = 'ADMINTASKINFO';
+
+export const TASKFIX: string = 'TASKFIX';

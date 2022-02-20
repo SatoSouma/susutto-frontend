@@ -1,6 +1,5 @@
 import { VFC } from 'react';
 import { Box, Button } from '@chakra-ui/react';
-import styles from './HandleBtn.module.scss';
 
 type props = {
   id: number;

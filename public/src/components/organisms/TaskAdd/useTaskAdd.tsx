@@ -1,10 +1,9 @@
-import { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { TaskState } from 'public';
+import { Socket } from 'socket.io-client';
+import { DefaultEventsMap } from 'socket.io/dist/typed-events';
 
-export function useTaskAdd() {
-  const [result, setReselt] = useState<any>();
-
+export function useTaskAdd(socket: Socket<DefaultEventsMap, DefaultEventsMap>) {
   const taskState = new TaskState();
   const taskName = useSelector(taskState.taskName);
   const taskDetail = useSelector(taskState.taskDetail);
@@ -13,27 +12,14 @@ export function useTaskAdd() {
   const deadLineMinutes = useSelector(taskState.deadLineMinutes);
   const department = useSelector(taskState.department);
 
-  const load = () => {
-    const formItem = {
+  const onClickSend = () => {
+    socket.emit('crtask', {
       taskName: taskName,
       taskDetail: taskDetail,
       deadLine: `${deadLineDay} ${deadLineHour}:${deadLineMinutes}`,
       department: department,
-    };
-
-    return formItem;
+    });
   };
 
-  const onClickSend = () => {
-    const form = load();
-    fetch('http://localhost:8010/create', {
-      method: 'POST',
-      body: JSON.stringify(form),
-      headers: { 'Content-Type': 'application/json' },
-    })
-      .then((res) => console.log(res))
-      .catch((error) => console.log(error));
-  };
-
-  return [onClickSend, result] as const;
+  return [onClickSend] as const;
 }

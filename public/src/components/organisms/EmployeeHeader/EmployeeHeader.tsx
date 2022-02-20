@@ -1,38 +1,46 @@
 import { VFC } from 'react';
+import { parseCookies } from 'nookies';
+import { NextPageContext } from 'next';
 import {
   Text,
   Button,
   Grid,
   GridItem,
   useDisclosure,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  DrawerHeader,
-  DrawerBody,
-  DrawerFooter,
-  Drawer,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  IconButton,
 } from '@chakra-ui/react';
 import { UserIcon } from 'public';
+import {
+  AddIcon,
+  EditIcon,
+  ExternalLinkIcon,
+  RepeatIcon,
+} from '@chakra-ui/icons';
 import HamburgerIcon from '../../atoms/Icons/HamburgerIcon';
-import { useRef } from 'react';
+import { useEmployeeHeader } from './useEmployeeHeader';
 
-const EmployeeHeader: VFC = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+const EmployeeHeader: VFC = ({}, ctx?: NextPageContext) => {
+  const cookie = parseCookies(ctx);
+  const color = cookie.color;
+  const [signOut] = useEmployeeHeader();
   return (
     <Grid
       templateColumns="repeat(3, 1fr)"
       textAlign="center"
-      bg="LimeGreen.100"
+      bg={`${color}.100`}
       height="100"
       paddingTop="8"
     >
       <GridItem colSpan={1}>
         <Button
-          bg="LimeGreen.100"
-          _active={{ bg: 'LimeGreen.100' }}
-          _hover={{ bg: 'LimeGreen.100' }}
-          _focus={{ boxShadow: 'none', bg: 'LimeGreen.100' }}
+          bg={`${color}.100`}
+          _active={{ bg: `${color}.100` }}
+          _hover={{ bg: `${color}.100` }}
+          _focus={{ boxShadow: 'none', bg: `${color}.100` }}
         >
           <UserIcon color={'white'} size={'8'} />
         </Button>
@@ -43,32 +51,26 @@ const EmployeeHeader: VFC = () => {
         </Text>
       </GridItem>
       <GridItem colSpan={1}>
-        <Button
-          bg="LimeGreen.100"
-          _active={{ bg: 'LimeGreen.100' }}
-          _hover={{ bg: 'LimeGreen.100' }}
-          _focus={{ boxShadow: 'none', bg: 'LimeGreen.100' }}
-          onClick={onOpen}
-        >
-          <HamburgerIcon color={'white'} size={'8'} />
-        </Button>
-        <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
-          <DrawerOverlay>
-            <DrawerContent>
-              <DrawerCloseButton />
-              <DrawerHeader>hamburger menu</DrawerHeader>
-
-              <DrawerBody>
-                <Text>Linkなど</Text>
-                <Text>Linkなど</Text>
-                <Text>Linkなど</Text>
-                <Text>Linkなど</Text>
-              </DrawerBody>
-
-              <DrawerFooter></DrawerFooter>
-            </DrawerContent>
-          </DrawerOverlay>
-        </Drawer>
+        <Menu>
+          <MenuButton
+            bg={`${color}.100`}
+            _active={{ bg: `${color}.100` }}
+            _hover={{ bg: `${color}.100` }}
+            _focus={{ boxShadow: 'none', bg: `${color}.100` }}
+            as={IconButton}
+            aria-label="Options"
+            icon={<HamburgerIcon color={'white'} size={'8'} />}
+          />
+          <MenuList>
+            <MenuItem
+              icon={<RepeatIcon />}
+              command="⌘⇧N"
+              onClick={() => signOut()}
+            >
+              サインアウト
+            </MenuItem>
+          </MenuList>
+        </Menu>
       </GridItem>
     </Grid>
   );
