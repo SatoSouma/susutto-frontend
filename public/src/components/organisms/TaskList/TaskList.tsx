@@ -19,6 +19,7 @@ moment.tz.setDefault('Asia/Tokyo');
 const TaskList: VFC = () => {
   const taskState = new TaskState();
   const result = useSelector(taskState.adminTaskInfo);
+  console.log(result);
   const [onClickMove] = useTaskList();
 
   return !!result ? (
@@ -161,7 +162,7 @@ const TaskList: VFC = () => {
               {result.done.length !== 0 ? (
                 <AdminTabHeader />
               ) : (
-                <Text color="skyBlue.300">達成業務はありません。</Text>
+                <Text color="skyBlue.300">達成済み業務はありません。</Text>
               )}
               {result.done.map((val: adminTaskTypes) => {
                 val.deadLine = val.deadLine.replace(/T/g, ' ');

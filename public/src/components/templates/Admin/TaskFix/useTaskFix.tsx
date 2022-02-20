@@ -1,29 +1,27 @@
-import { useDispatch } from 'react-redux';
-import { TaskAction } from 'public';
+import { useDispatch, useSelector } from 'react-redux';
+import { TaskAction, TaskState } from 'public';
 import { Socket } from 'socket.io-client';
 import { DefaultEventsMap } from 'socket.io/dist/typed-events';
 
 export function useTaskFix(socket: Socket<DefaultEventsMap, DefaultEventsMap>) {
-  const taskAction = new TaskAction();
-  const dispatch = useDispatch();
+  const taskState = new TaskState();
+  const taskFix = useSelector(taskState.taskFix);
 
-  const onClickMove = (
-    id: number,
-    taskName: string,
-    taskDetail: string,
-    deadLine: string,
-    departmentName: string
-  ) => {
-    const taskFix = {
-      id: id,
-      taskName: taskName,
+  const taskId = taskFix.id;
+  console.log('タスク');
+  console.log(taskId);
+  const taskDetail = useSelector(taskState.taskDetail);
+  const deadLineDay = useSelector(taskState.deadLineDay);
+  const deadLineHour = useSelector(taskState.deadLineHour);
+  const deadLineMinutes = useSelector(taskState.deadLineMinutes);
+
+  const onClickTaskUp = () => {
+    socket.emit('uptask', {
+      id: taskId,
       taskDetail: taskDetail,
-      deadLine: deadLine,
-      departmentName: departmentName,
-    };
-    dispatch(taskAction.setTaskFix(taskFix));
-    dispatch(taskAction.setPage('fix'));
+      deadLine: `${deadLineDay} ${deadLineHour}:${deadLineMinutes}`,
+    });
   };
 
-  return [onClickMove] as const;
+  return [onClickTaskUp] as const;
 }

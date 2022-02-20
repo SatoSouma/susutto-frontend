@@ -13,10 +13,12 @@ import { TaskState } from 'public';
 import { TaskAdd, TaskList } from 'public';
 import TaskFix from '../TaskFix/TaskFix';
 import { props } from 'types/propsTypes';
+import { useAdminMainTemplete } from './useAdminMainTemplete';
 
 const AdminMainTemplete: React.VFC<props> = ({ socket }) => {
   const taskState = new TaskState();
   const rePage = useSelector(taskState.page);
+  const [signOut] = useAdminMainTemplete();
 
   let currentPage: any;
 
@@ -63,7 +65,7 @@ const AdminMainTemplete: React.VFC<props> = ({ socket }) => {
               <AttendBtn />
             </GridItem>
             <GridItem colSpan={1} mt="20">
-              <LoginBackBtn />
+              <LoginBackBtn signOut={signOut} />
             </GridItem>
           </Grid>
         </GridItem>

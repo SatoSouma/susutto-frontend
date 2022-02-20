@@ -3,6 +3,7 @@ import { Box, Button } from '@chakra-ui/react';
 import { FixBtnProps } from 'types/propsTypes';
 
 const FixBtn: VFC<FixBtnProps> = (props: FixBtnProps) => {
+  console.log(props.id);
   return (
     <Box paddingTop="1em" textAlign="right">
       <Button

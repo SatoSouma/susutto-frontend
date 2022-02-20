@@ -20,6 +20,7 @@ export function useTaskList() {
       departmentName: departmentName,
     };
     dispatch(taskAction.setTaskFix(taskFix));
+
     dispatch(taskAction.setPage('fix'));
   };
 

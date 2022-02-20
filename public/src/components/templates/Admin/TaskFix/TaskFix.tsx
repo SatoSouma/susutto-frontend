@@ -1,11 +1,17 @@
-import { Button, Grid, Heading, GridItem, Box } from '@chakra-ui/react';
-import { TaskState } from 'public';
+import { Button, Grid, Heading, GridItem, Box, Text } from '@chakra-ui/react';
+import {
+  DeadlineSelectorFix,
+  DepartmentSelectorFix,
+  TaskContentFix,
+  TaskState,
+  TaskTitleFix,
+} from 'public';
 import { props } from 'types/propsTypes';
 import { useSelector } from 'react-redux';
+import { useTaskFix } from './useTaskFix';
 
-const TaskFix: React.VFC<props> = (props: props) => {
-  const taskState = new TaskState();
-
+const TaskFix: React.VFC<props> = ({ socket }) => {
+  const [onClickTaskUp] = useTaskFix(socket);
   return (
     <Box
       border="1px"
@@ -21,13 +27,21 @@ const TaskFix: React.VFC<props> = (props: props) => {
           <Heading>業務指示修正画面</Heading>
         </GridItem>
         <GridItem colSpan={1} mt="10">
-          {useSelector(taskState.taskFix)}
+          <DepartmentSelectorFix />
         </GridItem>
-        <GridItem colSpan={2} mr="10" ml="10"></GridItem>
-        <GridItem colSpan={2} mr="10" ml="10"></GridItem>
-        <GridItem colSpan={2} mr="10" ml="10"></GridItem>
+        <GridItem colSpan={2} mr="10" ml="10">
+          <TaskTitleFix />
+        </GridItem>
+        <GridItem colSpan={2} mr="10" ml="10">
+          <DeadlineSelectorFix />
+        </GridItem>
+        <GridItem colSpan={2} mr="10" ml="10">
+          <TaskContentFix />
+        </GridItem>
         <GridItem colSpan={2} textAlign="center">
-          <Button colorScheme="blue">修正</Button>
+          <Button colorScheme="blue" onClick={() => onClickTaskUp()}>
+            修正
+          </Button>
         </GridItem>
       </Grid>
     </Box>
