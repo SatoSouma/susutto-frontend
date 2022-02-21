@@ -1,12 +1,24 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { NextPage } from 'next';
+import { NextPage, NextPageContext } from 'next';
 import Head from 'next/head';
+import { NextRouter, useRouter } from 'next/router';
+import { parseCookies } from 'nookies';
 import { AdminMainTemplete, TaskAction } from 'public';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { io } from 'socket.io-client';
 
-const adminMainPage: NextPage = () => {
+type props = {
+  router: NextRouter;
+};
+
+const adminMainPage: NextPage<props> = ({ router }, ctx?: NextPageContext) => {
+  const cookie = parseCookies(ctx);
+
+  if (!cookie.userId) {
+    router.replace('/AdminLogin');
+  }
+
   const socket = io();
   const taskAction = new TaskAction();
   const dispatch = useDispatch();
@@ -53,7 +65,8 @@ const adminMainPage: NextPage = () => {
 // すべてのリクエストの度に実行される;
 export function getServerSideProps() {
   // props を通じて Page に data を渡す
-  return { props: {} };
+  const router = useRouter();
+  return { props: { router: router } };
 }
 
 export default adminMainPage;
