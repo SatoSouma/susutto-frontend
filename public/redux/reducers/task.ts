@@ -9,6 +9,7 @@ import {
   TASKINFO,
   ADMINTASKINFO,
   TASKFIX,
+  COLOR,
 } from '../actions/types';
 
 import { action, state } from 'types/reduxTypes';
@@ -24,6 +25,7 @@ const initianAppState: state = {
   taskInfo: undefined,
   adminTaskInfo: undefined,
   taskFix: undefined,
+  color: '',
 };
 
 const task = (state = initianAppState, action: action) => {
@@ -57,6 +59,9 @@ const task = (state = initianAppState, action: action) => {
 
     case TASKFIX:
       return { ...state, taskFix: action.input };
+
+    case COLOR:
+      return { ...state, color: action.input };
 
     default:
       return state;

@@ -1,24 +1,16 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { parseCookies } from 'nookies';
 import { NextPageContext, NextPage } from 'next';
 import { MainTemplete, TaskAction } from 'public';
 import io from 'socket.io-client';
 import Head from 'next/head';
 import { useDispatch } from 'react-redux';
-import { NextRouter, useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 
-type props = {
-  router: NextRouter;
-};
-
-const mainPage: NextPage<props> = ({ router }, ctx?: NextPageContext) => {
+const mainPage: NextPage = ({}, ctx?: NextPageContext) => {
+  const router = useRouter();
   const cookie = parseCookies(ctx);
-
-  if (!cookie.userId) {
-    router.replace('/login');
-  }
-
   const taskAction = new TaskAction();
   const dispatch = useDispatch();
   const socket = io();
@@ -33,6 +25,11 @@ const mainPage: NextPage<props> = ({ router }, ctx?: NextPageContext) => {
   };
 
   useEffect(() => {
+    dispatch(taskAction.setColor(cookie.color));
+    console.log(cookie.userId);
+    if (!cookie.userId) {
+      router.replace('/login');
+    }
     //Serverからメッセージを受信
     socket.on('chResult', (data: { message: boolean }) => {
       data.message ? socketFlug() : console.log('error');
@@ -60,9 +57,7 @@ const mainPage: NextPage<props> = ({ router }, ctx?: NextPageContext) => {
 
 // すべてのリクエストの度に実行される;
 export function getServerSideProps() {
-  const router = useRouter();
-  // props を通じて Page に data を渡す
-  return { props: { router } };
+  return { props: {} };
 }
 
 export default mainPage;

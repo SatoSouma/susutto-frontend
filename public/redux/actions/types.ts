@@ -18,3 +18,5 @@ export const TASKINFO: string = 'TASKINFO';
 export const ADMINTASKINFO: string = 'ADMINTASKINFO';
 
 export const TASKFIX: string = 'TASKFIX';
+
+export const COLOR: string = 'COLOR';

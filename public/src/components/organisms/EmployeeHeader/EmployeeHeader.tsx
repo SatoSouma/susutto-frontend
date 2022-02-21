@@ -13,19 +13,16 @@ import {
   MenuItem,
   IconButton,
 } from '@chakra-ui/react';
-import { UserIcon } from 'public';
-import {
-  AddIcon,
-  EditIcon,
-  ExternalLinkIcon,
-  RepeatIcon,
-} from '@chakra-ui/icons';
+import { TaskState, UserIcon } from 'public';
+import { RepeatIcon } from '@chakra-ui/icons';
 import HamburgerIcon from '../../atoms/Icons/HamburgerIcon';
 import { useEmployeeHeader } from './useEmployeeHeader';
+import { useSelector } from 'react-redux';
 
-const EmployeeHeader: VFC = ({}, ctx?: NextPageContext) => {
-  const cookie = parseCookies(ctx);
-  const color = cookie.color;
+const EmployeeHeader: VFC = () => {
+  const taskState = new TaskState();
+  const color = useSelector(taskState.color);
+
   const [signOut] = useEmployeeHeader();
   return (
     <Grid
