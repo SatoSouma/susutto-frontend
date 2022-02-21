@@ -11,13 +11,14 @@ import {
 import { useSelector } from 'react-redux';
 import { TaskState } from 'public';
 import { TaskAdd, TaskList } from 'public';
-import { useAdminMainTemplete } from './useAdminMainTemplete';
 import TaskFix from '../TaskFix/TaskFix';
+import { props } from 'types/propsTypes';
+import { useAdminMainTemplete } from './useAdminMainTemplete';
 
-const AdminMainTemplete: React.VFC = () => {
+const AdminMainTemplete: React.VFC<props> = ({ socket }) => {
   const taskState = new TaskState();
   const rePage = useSelector(taskState.page);
-  const [socket] = useAdminMainTemplete();
+  const [signOut] = useAdminMainTemplete();
 
   let currentPage: any;
 
@@ -64,7 +65,7 @@ const AdminMainTemplete: React.VFC = () => {
               <AttendBtn />
             </GridItem>
             <GridItem colSpan={1} mt="20">
-              <LoginBackBtn />
+              <LoginBackBtn signOut={signOut} />
             </GridItem>
           </Grid>
         </GridItem>

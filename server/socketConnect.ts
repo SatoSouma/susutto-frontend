@@ -48,3 +48,20 @@ export function socketTaskCreate(socket: socketio.Socket) {
       .catch(() => socket.emit('crResult', { message: false }));
   });
 }
+
+export function socketTaskFix(socket: socketio.Socket) {
+  socket.on('uptask', (data) => {
+    console.log(data);
+    fetch(`${process.env.NEXT_PUBLIC_URL}/taskFix`, {
+      method: 'PUT',
+      body: JSON.stringify({
+        id: data.id,
+        taskDetail: data.taskDetail,
+        deadLine: data.deadLine,
+      }),
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then(() => socket.emit('crResult', { message: true }))
+      .catch(() => socket.emit('crResult', { message: false }));
+  });
+}

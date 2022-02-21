@@ -19,6 +19,10 @@ export { default as AttendBtn } from './src/components/atoms/AttendBtn';
 export { default as FormBtn } from './src/components/atoms/FormBtn';
 export { default as HeaderBar } from './src/components/atoms/HeaderBar';
 export { default as LoginBackBtn } from './src/components/atoms/LoginBackBtn';
+export { default as TaskTitleFix } from './src/components/atoms/TaskTitleFix';
+export { default as DepartmentSelectorFix } from './src/components/atoms/DepartmentSelectorFix';
+export { default as DeadlineSelectorFix } from './src/components/atoms/DeadlineSelectorFix';
+export { default as TaskContentFix } from './src/components/atoms/TaskContentFix';
 //icons
 export { default as UserIcon } from './src/components/atoms/Icons/UserIcon';
 export { default as HamburgerIcon } from './src/components/atoms/Icons/HamburgerIcon';
@@ -44,6 +48,7 @@ export { default as MainTemplete } from './src/components/templates/Employee/Mai
 export { default as TaskFix } from './src/components/templates/Admin/TaskFix/TaskFix';
 export { default as AdminMainTemplete } from './src/components/templates/Admin/AdminMain/AdminMainTemplete';
 export { default as LoginTemplate } from './src/components/templates/Login/LoginTemplate';
+export { default as AdminLoginTemplate } from './src/components/templates/Login/AdminLoginTemplate';
 
 // redux state
 export { default as TaskState } from './redux/selectors';

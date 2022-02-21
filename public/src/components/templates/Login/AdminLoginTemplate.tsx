@@ -11,9 +11,9 @@ import {
   Text,
   useMediaQuery,
 } from '@chakra-ui/react';
-import { useLogin } from './useLogin';
+import { useAdminLogin } from './useAdminLogin';
 
-const LoginTemplate: React.VFC = () => {
+const AdminLoginTemplate: React.VFC = () => {
   const [
     onChengePass,
     onChengeUserId,
@@ -23,7 +23,7 @@ const LoginTemplate: React.VFC = () => {
     pass,
     show,
     error,
-  ] = useLogin();
+  ] = useAdminLogin();
   const [isLargerThan480] = useMediaQuery('(min-width: 480px)');
   return (
     <Box h="800">
@@ -31,7 +31,7 @@ const LoginTemplate: React.VFC = () => {
         {error}
       </Text>
       <Box mt="10" mb="5" textAlign="center">
-        <Heading color="gray.600">ログイン</Heading>
+        <Heading color="gray.600">管理者ログイン</Heading>
       </Box>
       <Box>
         <Grid
@@ -96,8 +96,8 @@ const LoginTemplate: React.VFC = () => {
             </Button>
           </GridItem>
           <GridItem colSpan={2} mb="5" mt="5" textAlign="center">
-            <Link color="skyBlue.300" href="./AdminLogin">
-              管理者ログインはこちら
+            <Link color="skyBlue.300" href="./login">
+              一般ログインはこちら
             </Link>
           </GridItem>
         </Grid>
@@ -106,4 +106,4 @@ const LoginTemplate: React.VFC = () => {
   );
 };
 
-export default LoginTemplate;
+export default AdminLoginTemplate;

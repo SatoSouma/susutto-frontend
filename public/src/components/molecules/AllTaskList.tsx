@@ -19,6 +19,7 @@ type props = {
 };
 
 const AllTaskList: VFC<props> = (props: props) => {
+  console.log(props);
   return (
     <Box>
       <Accordion allowToggle>

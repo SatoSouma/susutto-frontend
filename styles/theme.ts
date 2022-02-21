@@ -6,25 +6,33 @@ const theme = extendTheme({
       200: '#0B1C9D',
       300: '#1b85d1',
     },
-    LimeGreen: {
-      100: '#7CE032',
-      200: '#43B211',
-    },
-    vividRed: {
-      100: '#FF7983',
-      200: '#AC0922',
-    },
     cream: {
       100: '#fffaf0',
     },
-    vividYellow: {
-      100: '#ffd700',
+    marineProduct: {
+      100: '#2599EF', //下に行くほど暗い色
+      200: '#0B1C9D',
+      300: '#1b85d1',
     },
-    thinPink: {
-      100: '#ee82ee',
+    agriculturalProduct: {
+      100: '#7CE032',
+      200: '#43B211',
     },
-    thinRightBlue: {
-      100: '#00ffff',
+    livestock: {
+      100: '#FEB2B2',
+      200: '#FC8181',
+    },
+    delicatessen: {
+      100: '#F6AD55',
+      200: '#ED8936',
+    },
+    serviceCounter: {
+      100: '#B794F4',
+      200: '#9F7AEA',
+    },
+    glossary: {
+      100: '#4FD1C5',
+      200: '#38B2AC',
     },
   },
 });

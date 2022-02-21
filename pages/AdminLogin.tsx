@@ -1,14 +1,14 @@
 import { NextPage } from 'next';
-import { LoginTemplate } from 'public';
+import { AdminLoginTemplate } from 'public';
 import Head from 'next/head';
 
-const loginPage: NextPage = ({}) => {
+const AdminLoginPage: NextPage = ({}) => {
   return (
     <>
       <Head>
-        <title>Login</title>
+        <title>AdminLogin</title>
       </Head>
-      <LoginTemplate />
+      <AdminLoginTemplate />
     </>
   );
 };
@@ -18,4 +18,4 @@ export function getServerSideProps() {
   return { props: {} };
 }
 
-export default loginPage;
+export default AdminLoginPage;

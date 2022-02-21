@@ -4,6 +4,7 @@ import { Server as socketioServer, Socket } from 'socket.io';
 import {
   socketChargeUpdate,
   socketTaskCreate,
+  socketTaskFix,
   socketTaskUpdate,
 } from './socketConnect';
 import express, { Express } from 'express';
@@ -23,6 +24,7 @@ app.prepare().then(async () => {
     socketChargeUpdate(socket);
     socketTaskUpdate(socket);
     socketTaskCreate(socket);
+    socketTaskFix(socket);
   });
 
   io.attach(server);

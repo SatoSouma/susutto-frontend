@@ -6,12 +6,22 @@ import { MainTemplete, TaskAction } from 'public';
 import io from 'socket.io-client';
 import Head from 'next/head';
 import { useDispatch } from 'react-redux';
+import { NextRouter, useRouter } from 'next/router';
 
-const mainPage: NextPage = ({}, ctx?: NextPageContext) => {
+type props = {
+  router: NextRouter;
+};
+
+const mainPage: NextPage<props> = ({ router }, ctx?: NextPageContext) => {
+  const cookie = parseCookies(ctx);
+
+  if (!cookie.userId) {
+    router.replace('/login');
+  }
+
   const taskAction = new TaskAction();
   const dispatch = useDispatch();
   const socket = io();
-  const cookie = parseCookies(ctx);
 
   const socketFlug = () => {
     console.log('通信きた');
@@ -50,8 +60,9 @@ const mainPage: NextPage = ({}, ctx?: NextPageContext) => {
 
 // すべてのリクエストの度に実行される;
 export function getServerSideProps() {
+  const router = useRouter();
   // props を通じて Page に data を渡す
-  return { props: {} };
+  return { props: { router } };
 }
 
 export default mainPage;
