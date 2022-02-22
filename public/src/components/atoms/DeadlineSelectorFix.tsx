@@ -25,6 +25,7 @@ const DeadlineSelectorFix: React.VFC = () => {
 
   return (
     <Grid templateColumns="repeatrepeat(7, 1fr)">
+      {console.log('日' + deadLineDay)}
       <GridItem colSpan={9}>
         <Text textAlign="center" color="gray.600">
           期限
@@ -53,7 +54,7 @@ const DeadlineSelectorFix: React.VFC = () => {
             dispatch(taskAction.setDeadLineHour(e.target.value as string))
           }
         >
-          {deadLineHour}
+          {optionHour}
         </Select>
       </GridItem>
       <GridItem colSpan={1}>
@@ -72,7 +73,7 @@ const DeadlineSelectorFix: React.VFC = () => {
             dispatch(taskAction.setDeadLineMinutes(e.target.value as string))
           }
         >
-          {deadLineMinutes}
+          {optionMinutes}
         </Select>
       </GridItem>
       <GridItem colSpan={1}>
