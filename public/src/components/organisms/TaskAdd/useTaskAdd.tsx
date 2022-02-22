@@ -13,12 +13,37 @@ export function useTaskAdd(socket: Socket<DefaultEventsMap, DefaultEventsMap>) {
   const department = useSelector(taskState.department);
 
   const onClickSend = () => {
-    socket.emit('crtask', {
-      taskName: taskName,
-      taskDetail: taskDetail,
-      deadLine: `${deadLineDay} ${deadLineHour}:${deadLineMinutes}`,
-      department: department,
-    });
+    let inputFlug = true;
+    let errorMsg = '';
+    if (!taskName) {
+      inputFlug = false;
+      errorMsg += '業務名';
+    }
+    if (!department) {
+      inputFlug = false;
+      errorMsg == '' ? (errorMsg += '部署') : (errorMsg += '、部署');
+    }
+    if (!taskDetail) {
+      inputFlug = false;
+      errorMsg == '' ? (errorMsg += '業務内容') : (errorMsg += '、業務内容');
+    }
+    if (!deadLineDay) {
+      inputFlug = false;
+      errorMsg == '' ? (errorMsg += '期限日') : (errorMsg += '、期限日');
+    }
+
+    if (!inputFlug) {
+      alert(`${errorMsg}が未入力です`);
+    }
+
+    if (inputFlug) {
+      socket.emit('crtask', {
+        taskName: taskName,
+        taskDetail: taskDetail,
+        deadLine: `${deadLineDay} ${deadLineHour}:${deadLineMinutes}`,
+        department: department,
+      });
+    }
   };
 
   return [onClickSend] as const;

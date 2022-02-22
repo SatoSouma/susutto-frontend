@@ -8,17 +8,9 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { io } from 'socket.io-client';
 
-type props = {
-  router: NextRouter;
-};
-
-const adminMainPage: NextPage<props> = ({ router }, ctx?: NextPageContext) => {
+const adminMainPage: NextPage = ({}, ctx?: NextPageContext) => {
   const cookie = parseCookies(ctx);
-
-  if (!cookie.userId) {
-    router.replace('/AdminLogin');
-  }
-
+  const router = useRouter();
   const socket = io();
   const taskAction = new TaskAction();
   const dispatch = useDispatch();
@@ -33,6 +25,11 @@ const adminMainPage: NextPage<props> = ({ router }, ctx?: NextPageContext) => {
   };
 
   useEffect(() => {
+    console.log(cookie.adminUserId);
+    if (!cookie.adminUserId) {
+      router.replace('/AdminLogin');
+    }
+
     //Serverからメッセージを受信
     socket.on('crResult', (data: { message: boolean }) => {
       if (data.message) {
@@ -52,21 +49,22 @@ const adminMainPage: NextPage<props> = ({ router }, ctx?: NextPageContext) => {
       });
   }, []);
 
-  return (
+  return !!cookie.adminUserId ? (
     <>
       <Head>
         <title>Admin</title>
       </Head>
       <AdminMainTemplete socket={socket} />
     </>
+  ) : (
+    <></>
   );
 };
 
 // すべてのリクエストの度に実行される;
 export function getServerSideProps() {
   // props を通じて Page に data を渡す
-  const router = useRouter();
-  return { props: { router: router } };
+  return { props: {} };
 }
 
 export default adminMainPage;

@@ -6,16 +6,16 @@ import {
   MyTaskBox,
   EmployeeHeader,
   EmployeeFooter,
+  TaskState,
 } from 'public';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
-import { parseCookies } from 'nookies';
-import { NextPageContext } from 'next';
 
 import { props } from 'types/propsTypes';
+import { useSelector } from 'react-redux';
 
-const EmployeeTemplate: VFC<props> = ({ socket }, ctx?: NextPageContext) => {
-  const cookie = parseCookies(ctx);
-  const color = cookie.color;
+const EmployeeTemplate: VFC<props> = ({ socket }) => {
+  const taskState = new TaskState();
+  const color = useSelector(taskState.color);
   return (
     <Box>
       <EmployeeHeader />

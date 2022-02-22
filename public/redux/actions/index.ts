@@ -9,6 +9,7 @@ import {
   TASKINFO,
   ADMINTASKINFO,
   TASKFIX,
+  COLOR,
 } from './types';
 
 import { taskInfoType, adminTaskInfoType, taskFix } from 'types/reduxTypes';
@@ -61,6 +62,11 @@ class TaskAction {
 
   setTaskFix = (input: taskFix) => ({
     type: TASKFIX,
+    input,
+  });
+
+  setColor = (input: string) => ({
+    type: COLOR,
     input,
   });
 }

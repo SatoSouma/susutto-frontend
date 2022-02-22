@@ -6,10 +6,9 @@ const DeadlineSelectorFix: React.VFC = () => {
   const dispatch = useDispatch();
   const taskAction = new TaskAction();
   const taskState = new TaskState();
-  const taskFix = useSelector(taskState.taskFix);
-
-  const result = taskFix.deadLine.split(' ');
-  const time = result[1].split(':');
+  const deadLineDay = useSelector(taskState.deadLineDay);
+  const deadLineHour = useSelector(taskState.deadLineHour);
+  const deadLineMinutes = useSelector(taskState.deadLineMinutes);
 
   const optionHour = [];
   const optionMinutes = [];
@@ -33,6 +32,7 @@ const DeadlineSelectorFix: React.VFC = () => {
       </GridItem>
       <GridItem colSpan={4}>
         <Input
+          value={deadLineDay}
           type="date"
           boxShadow="inner"
           color="gray.400"
@@ -44,7 +44,7 @@ const DeadlineSelectorFix: React.VFC = () => {
       <GridItem colSpan={1}></GridItem>
       <GridItem colSpan={1}>
         <Select
-          placeholder={time[0]}
+          placeholder={deadLineHour}
           boxShadow="base"
           border="1px"
           borderRadius="10"
@@ -53,7 +53,7 @@ const DeadlineSelectorFix: React.VFC = () => {
             dispatch(taskAction.setDeadLineHour(e.target.value as string))
           }
         >
-          {optionHour}
+          {deadLineHour}
         </Select>
       </GridItem>
       <GridItem colSpan={1}>
@@ -63,7 +63,7 @@ const DeadlineSelectorFix: React.VFC = () => {
       </GridItem>
       <GridItem colSpan={1}>
         <Select
-          placeholder={time[1]}
+          placeholder={deadLineMinutes}
           boxShadow="base"
           border="1px"
           borderRadius="10"
@@ -72,7 +72,7 @@ const DeadlineSelectorFix: React.VFC = () => {
             dispatch(taskAction.setDeadLineMinutes(e.target.value as string))
           }
         >
-          {optionMinutes}
+          {deadLineMinutes}
         </Select>
       </GridItem>
       <GridItem colSpan={1}>

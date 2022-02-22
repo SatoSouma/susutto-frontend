@@ -38,6 +38,10 @@ class TaskState {
   taskFix = (state: any) => {
     return state.task.taskFix;
   };
+
+  color = (state: any) => {
+    return state.task.color;
+  };
 }
 
 export default TaskState;

@@ -1,11 +1,14 @@
 import { NextPageContext } from 'next';
 import { useRouter } from 'next/router';
-import { destroyCookie } from 'nookies';
+import { destroyCookie, setCookie } from 'nookies';
 
 export function useAdminMainTemplete(ctx?: NextPageContext) {
   const router = useRouter();
   const signOut = () => {
-    destroyCookie(ctx, 'adminUserId');
+    setCookie(ctx, 'adminUserId', '', {
+      maxAge: 30 * 24 * 60 * 60,
+    });
+
     router.replace('/login');
   };
 

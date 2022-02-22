@@ -47,6 +47,7 @@ export type state = {
   taskInfo: undefined | taskInfoType;
   adminTaskInfo: undefined | adminTaskInfoType;
   taskFix: undefined | taskFix;
+  color: string;
 };
 
 export type action = {
