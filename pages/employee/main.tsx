@@ -45,13 +45,15 @@ const mainPage: NextPage = ({}, ctx?: NextPageContext) => {
       });
   }, []);
 
-  return (
+  return !!cookie.userId ? (
     <>
       <Head>
         <title>Top</title>
       </Head>
       <MainTemplete socket={socket} />
     </>
+  ) : (
+    <></>
   );
 };
 

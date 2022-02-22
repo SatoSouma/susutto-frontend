@@ -9,7 +9,6 @@ import {
   TaskState,
 } from 'public';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
-import { NextPageContext } from 'next';
 
 import { props } from 'types/propsTypes';
 import { useSelector } from 'react-redux';

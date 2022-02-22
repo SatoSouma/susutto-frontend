@@ -3,11 +3,9 @@ import {
   DeadlineSelectorFix,
   DepartmentSelectorFix,
   TaskContentFix,
-  TaskState,
   TaskTitleFix,
 } from 'public';
 import { props } from 'types/propsTypes';
-import { useSelector } from 'react-redux';
 import { useTaskFix } from './useTaskFix';
 
 const TaskFix: React.VFC<props> = ({ socket }) => {

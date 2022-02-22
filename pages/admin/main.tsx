@@ -25,7 +25,8 @@ const adminMainPage: NextPage = ({}, ctx?: NextPageContext) => {
   };
 
   useEffect(() => {
-    if (!cookie.userId) {
+    console.log(cookie.adminUserId);
+    if (!cookie.adminUserId) {
       router.replace('/AdminLogin');
     }
 
@@ -48,13 +49,15 @@ const adminMainPage: NextPage = ({}, ctx?: NextPageContext) => {
       });
   }, []);
 
-  return (
+  return !!cookie.adminUserId ? (
     <>
       <Head>
         <title>Admin</title>
       </Head>
       <AdminMainTemplete socket={socket} />
     </>
+  ) : (
+    <></>
   );
 };
 

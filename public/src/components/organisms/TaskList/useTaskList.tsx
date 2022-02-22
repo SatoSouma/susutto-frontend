@@ -19,8 +19,16 @@ export function useTaskList() {
       deadLine: deadLine,
       departmentName: departmentName,
     };
-    dispatch(taskAction.setTaskFix(taskFix));
 
+    const result = deadLine.split(' ');
+    const time = result[1].split(':');
+    const day = result[0].split('/');
+
+    dispatch(taskAction.setDeadLineHour(time[0]));
+    dispatch(taskAction.setDeadLineDay(`${day[0]}-${day[1]}${day[2]}`));
+    dispatch(taskAction.setDeadLineMinutes(time[1]));
+    dispatch(taskAction.setTaskDetail(taskDetail));
+    dispatch(taskAction.setTaskFix(taskFix));
     dispatch(taskAction.setPage('fix'));
   };
 

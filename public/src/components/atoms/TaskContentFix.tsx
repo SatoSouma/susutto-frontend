@@ -6,12 +6,11 @@ const TaskContentFix: React.VFC = () => {
   const dispatch = useDispatch();
   const taskAction = new TaskAction();
   const taskState = new TaskState();
-  const taskFix = useSelector(taskState.taskFix);
   const taskDetail = useSelector(taskState.taskDetail);
   console.log(taskDetail);
   return (
     <Textarea
-      defaultValue={taskFix.taskDetail}
+      defaultValue={taskDetail}
       boxShadow="inner"
       onChange={(e) => dispatch(taskAction.setTaskDetail(e.target.value))}
     />
