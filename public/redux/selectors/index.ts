@@ -42,6 +42,10 @@ class TaskState {
   color = (state: any) => {
     return state.task.color;
   };
+
+  userId = (state: any) => {
+    return state.task.userId;
+  };
 }
 
 export default TaskState;
