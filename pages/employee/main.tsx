@@ -10,10 +10,10 @@ import { useRouter } from 'next/router';
 
 const mainPage: NextPage = ({}, ctx?: NextPageContext) => {
   const router = useRouter();
-  const cookie = parseCookies(ctx);
   const taskAction = new TaskAction();
   const dispatch = useDispatch();
   const socket = io();
+  const cookie = parseCookies(ctx);
 
   const socketFlug = () => {
     console.log('通信きた');
@@ -26,6 +26,7 @@ const mainPage: NextPage = ({}, ctx?: NextPageContext) => {
 
   useEffect(() => {
     dispatch(taskAction.setColor(cookie.color));
+
     console.log(cookie.userId);
     if (!cookie.userId) {
       router.replace('/login');

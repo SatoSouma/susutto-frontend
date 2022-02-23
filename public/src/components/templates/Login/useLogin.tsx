@@ -1,7 +1,8 @@
 import { setCookie } from 'nookies';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { NextPageContext } from 'next';
+import { useMediaQuery } from '@chakra-ui/react';
 
 export function useLogin() {
   const [userId, setUserId] = useState<string>('');
@@ -10,6 +11,7 @@ export function useLogin() {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const router = useRouter();
+  const [isLargerThan480] = useMediaQuery('(max-width: 480px)');
 
   const onChengeUserId = (e: string) => {
     setUserId(e);
@@ -56,5 +58,6 @@ export function useLogin() {
     pass,
     show,
     error,
+    isLargerThan480,
   ] as const;
 }

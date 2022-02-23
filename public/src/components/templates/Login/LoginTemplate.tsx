@@ -9,9 +9,9 @@ import {
   InputGroup,
   InputRightElement,
   Text,
-  useMediaQuery,
 } from '@chakra-ui/react';
 import { useLogin } from './useLogin';
+import styles from './Login.module.scss';
 
 const LoginTemplate: React.VFC = () => {
   const [
@@ -23,10 +23,14 @@ const LoginTemplate: React.VFC = () => {
     pass,
     show,
     error,
+    isLargerThan480,
   ] = useLogin();
-  const [isLargerThan480] = useMediaQuery('(min-width: 480px)');
-  return (
+
+  console.log('480' + isLargerThan480);
+
+  return isLargerThan480 !== undefined ? (
     <Box h="800">
+      {console.log('480' + isLargerThan480)}
       <Text fontWeight="bold" mt="5" textAlign="center" color="red">
         {error}
       </Text>
@@ -41,8 +45,7 @@ const LoginTemplate: React.VFC = () => {
           borderColor="gray.200"
           boxShadow="lg"
           bg="white"
-          mr={isLargerThan480 ? '500' : '5'}
-          ml={isLargerThan480 ? '500' : '5'}
+          className={styles.grid}
           borderRadius={10}
           color="gray.600"
         >
@@ -51,11 +54,7 @@ const LoginTemplate: React.VFC = () => {
               ログインID
             </Text>
           </GridItem>
-          <GridItem
-            colSpan={2}
-            mr={isLargerThan480 ? '100' : '20'}
-            ml={isLargerThan480 ? '100' : '20'}
-          >
+          <GridItem colSpan={2} className={styles.gridItem}>
             <Input
               placeholder="Enter loginId"
               onChange={(e) => onChengeUserId(e.target.value)}
@@ -66,11 +65,7 @@ const LoginTemplate: React.VFC = () => {
               パスワード
             </Text>
           </GridItem>
-          <GridItem
-            colSpan={2}
-            mr={isLargerThan480 ? '100' : '20'}
-            ml={isLargerThan480 ? '100' : '20'}
-          >
+          <GridItem colSpan={2} className={styles.gridItem}>
             <InputGroup>
               <Input
                 type={show ? 'text' : 'password'}
@@ -103,6 +98,8 @@ const LoginTemplate: React.VFC = () => {
         </Grid>
       </Box>
     </Box>
+  ) : (
+    <></>
   );
 };
 

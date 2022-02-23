@@ -20,3 +20,5 @@ export const ADMINTASKINFO: string = 'ADMINTASKINFO';
 export const TASKFIX: string = 'TASKFIX';
 
 export const COLOR: string = 'COLOR';
+
+export const USERID: string = 'USERID';

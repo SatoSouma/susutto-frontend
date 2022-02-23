@@ -1,7 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { setCookie } from 'nookies';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { NextPageContext } from 'next';
+import { useMediaQuery } from '@chakra-ui/react';
 
 export function useAdminLogin() {
   const [userId, setUserId] = useState<string>('');
@@ -10,6 +12,9 @@ export function useAdminLogin() {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const router = useRouter();
+  const [isLargerThan480] = useMediaQuery('(max-width: 480px)');
+
+  console.log('480' + isLargerThan480);
 
   const onChengeUserId = (e: string) => {
     setUserId(e);
@@ -44,6 +49,10 @@ export function useAdminLogin() {
       });
   }
 
+  useEffect(() => {
+    console.log('480' + isLargerThan480);
+  }, []);
+
   return [
     onChengePass,
     onChengeUserId,
@@ -53,5 +62,6 @@ export function useAdminLogin() {
     pass,
     show,
     error,
+    isLargerThan480,
   ] as const;
 }

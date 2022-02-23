@@ -10,6 +10,7 @@ import {
   ADMINTASKINFO,
   TASKFIX,
   COLOR,
+  USERID,
 } from './types';
 
 import { taskInfoType, adminTaskInfoType, taskFix } from 'types/reduxTypes';
@@ -67,6 +68,11 @@ class TaskAction {
 
   setColor = (input: string) => ({
     type: COLOR,
+    input,
+  });
+
+  setUserId = (input: string) => ({
+    type: USERID,
     input,
   });
 }

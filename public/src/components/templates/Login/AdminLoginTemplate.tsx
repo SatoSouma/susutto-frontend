@@ -9,9 +9,9 @@ import {
   InputGroup,
   InputRightElement,
   Text,
-  useMediaQuery,
 } from '@chakra-ui/react';
 import { useAdminLogin } from './useAdminLogin';
+import styles from './Login.module.scss';
 
 const AdminLoginTemplate: React.VFC = () => {
   const [
@@ -23,8 +23,9 @@ const AdminLoginTemplate: React.VFC = () => {
     pass,
     show,
     error,
+    isLargerThan480,
   ] = useAdminLogin();
-  const [isLargerThan480] = useMediaQuery('(min-width: 480px)');
+
   return (
     <Box h="800">
       <Text fontWeight="bold" mt="5" textAlign="center" color="red">
@@ -41,8 +42,7 @@ const AdminLoginTemplate: React.VFC = () => {
           borderColor="gray.200"
           boxShadow="lg"
           bg="white"
-          mr={isLargerThan480 ? '500' : '5'}
-          ml={isLargerThan480 ? '500' : '5'}
+          className={styles.grid}
           borderRadius={10}
           color="gray.600"
         >
@@ -51,11 +51,7 @@ const AdminLoginTemplate: React.VFC = () => {
               ログインID
             </Text>
           </GridItem>
-          <GridItem
-            colSpan={2}
-            mr={isLargerThan480 ? '100' : '20'}
-            ml={isLargerThan480 ? '100' : '20'}
-          >
+          <GridItem colSpan={2} className={styles.gridItem}>
             <Input
               placeholder="Enter loginId"
               onChange={(e) => onChengeUserId(e.target.value)}
@@ -66,11 +62,7 @@ const AdminLoginTemplate: React.VFC = () => {
               パスワード
             </Text>
           </GridItem>
-          <GridItem
-            colSpan={2}
-            mr={isLargerThan480 ? '100' : '20'}
-            ml={isLargerThan480 ? '100' : '20'}
-          >
+          <GridItem colSpan={2} className={styles.gridItem}>
             <InputGroup>
               <Input
                 type={show ? 'text' : 'password'}
