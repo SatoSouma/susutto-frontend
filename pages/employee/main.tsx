@@ -12,7 +12,7 @@ const mainPage: NextPage = ({}, ctx?: NextPageContext) => {
   const router = useRouter();
   const taskAction = new TaskAction();
   const dispatch = useDispatch();
-  const socket = io();
+  const socket = io(`${process.env.NEXT_PUBLIC_URL}`);
   const cookie = parseCookies(ctx);
 
   const socketFlug = () => {

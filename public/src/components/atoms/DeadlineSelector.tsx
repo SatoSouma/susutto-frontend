@@ -9,13 +9,21 @@ const DeadlineSelector: React.VFC = () => {
   const optionMinutes = [];
 
   for (let i = 0; i < 24; i++) {
-    optionHour.push(<option value={i}>{i}</option>);
+    optionHour.push(
+      <option key={i} value={i}>
+        {i}
+      </option>
+    );
   }
 
   for (let i = 0; i < 61; i++) {
     i < 10
-      ? optionMinutes.push(<option value={`0${i}`}>{`0${i}`}</option>)
-      : optionMinutes.push(<option value={i}>{i}</option>);
+      ? optionMinutes.push(<option key={i} value={`0${i}`}>{`0${i}`}</option>)
+      : optionMinutes.push(
+          <option key={i} value={i}>
+            {i}
+          </option>
+        );
   }
 
   return (

@@ -26,7 +26,7 @@ const TaskAdd: React.VFC<props> = (props: props) => {
           <Heading color="gray.600">業務指示作成画面</Heading>
         </GridItem>
         <GridItem colSpan={1} mt="10">
-          <DepartmentSelector />
+          <DepartmentSelector key={1} />
         </GridItem>
         <GridItem colSpan={2} mr="10" ml="10">
           <TaskTitle />

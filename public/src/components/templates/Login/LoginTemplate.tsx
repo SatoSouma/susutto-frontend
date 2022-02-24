@@ -26,8 +26,6 @@ const LoginTemplate: React.VFC = () => {
     isLargerThan480,
   ] = useLogin();
 
-  console.log('480' + isLargerThan480);
-
   return isLargerThan480 !== undefined ? (
     <Box h="800">
       {console.log('480' + isLargerThan480)}

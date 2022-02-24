@@ -11,7 +11,7 @@ import { io } from 'socket.io-client';
 const adminMainPage: NextPage = ({}, ctx?: NextPageContext) => {
   const cookie = parseCookies(ctx);
   const router = useRouter();
-  const socket = io();
+  const socket = io(`${process.env.NEXT_PUBLIC_URL}`);
   const taskAction = new TaskAction();
   const dispatch = useDispatch();
 
