@@ -30,15 +30,20 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
-    "@types/socket.io-client": "^3.0.0",
     "@types/moment": "^2.13.0",
     "@types/nookies": "^2.0.3",
     "@types/react": "^17.0.37",
     "@types/react-redux": "^7.1.22",
     "@types/redux": "^3.6.0",
+    "@types/socket.io-client": "^3.0.0",
     "eslint": "8.4.1",
     "eslint-config-next": "12.0.7",
     "prettier": "^2.5.1",
     "typescript": "^4.5.3"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:SatoSouma/throw_work_system.git",
+  "author": "sato-souma <59986133+sato-souma@users.noreply.github.com>",
+  "license": "MIT"
 }
