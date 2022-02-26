@@ -15,8 +15,6 @@ FROM node:16-alpine AS builder
 
 ARG NEXT_PUBLIC_URL
 
-ENV NEXT_PUBLIC_URL $NEXT_PUBLIC_URL
-
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .

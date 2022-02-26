@@ -6,6 +6,7 @@ const loginPage: NextPage = ({}) => {
   return (
     <>
       <Head>
+        {console.log(`${process.env.NEXT_PUBLIC_URL}`)}
         <title>Login</title>
       </Head>
       <LoginTemplate />
