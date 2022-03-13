@@ -31,9 +31,6 @@ const AllTaskBox: VFC<props> = (props: props) => {
       >
         {result.allTask.map((val: taskType) => {
           console.log(val);
-          val.deadLine = val.deadLine.replace(/T/g, ' ');
-          val.deadLine = val.deadLine.replace(/Z/g, ' ');
-
           return (
             <AllTaskList
               key={val.id}

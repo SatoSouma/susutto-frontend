@@ -15,15 +15,6 @@ const adminMainPage: NextPage = ({}, ctx?: NextPageContext) => {
   const taskAction = new TaskAction();
   const dispatch = useDispatch();
 
-  const socketFlug = () => {
-    console.log('通信きた');
-    fetch(`${process.env.NEXT_PUBLIC_URL}/getAdminTask`)
-      .then((res) => {
-        return res.json();
-      })
-      .then((json) => dispatch(taskAction.setAdminTasks(json)));
-  };
-
   useEffect(() => {
     console.log(cookie.adminUserId);
     if (!cookie.adminUserId) {
@@ -33,7 +24,14 @@ const adminMainPage: NextPage = ({}, ctx?: NextPageContext) => {
     //Serverからメッセージを受信
     socket.on('crResult', (data: { message: boolean }) => {
       if (data.message) {
-        socketFlug();
+        console.log('通信きた');
+
+        fetch(`${process.env.NEXT_PUBLIC_URL}/getAdminTask`)
+          .then((res) => {
+            return res.json();
+          })
+          .then((json) => dispatch(taskAction.setAdminTasks(json)));
+
         dispatch(taskAction.setPage('list'));
       } else {
         console.log('error');

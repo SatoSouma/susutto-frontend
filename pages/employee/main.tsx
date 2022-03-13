@@ -15,25 +15,25 @@ const mainPage: NextPage = ({}, ctx?: NextPageContext) => {
   const socket = io(`${process.env.NEXT_PUBLIC_URL}`);
   const cookie = parseCookies(ctx);
 
-  const socketFlug = () => {
-    console.log('通信きた');
-    fetch(`${process.env.NEXT_PUBLIC_URL}/getAllTask?id=${cookie.userId}`)
-      .then((res) => {
-        return res.json();
-      })
-      .then((json) => dispatch(taskAction.setTaskInfo(json)));
-  };
-
   useEffect(() => {
     dispatch(taskAction.setColor(cookie.color));
 
     console.log(cookie.userId);
     if (!cookie.userId) {
-      router.replace('/login');
+      router.replace('/');
     }
     //Serverからメッセージを受信
     socket.on('chResult', (data: { message: boolean }) => {
-      data.message ? socketFlug() : console.log('error');
+      if (data.message) {
+        console.log('通信きた');
+        fetch(`${process.env.NEXT_PUBLIC_URL}/getAllTask?id=${cookie.userId}`)
+          .then((res) => {
+            return res.json();
+          })
+          .then((json) => dispatch(taskAction.setTaskInfo(json)));
+      } else {
+        console.log('error');
+      }
     });
 
     fetch(`${process.env.NEXT_PUBLIC_URL}/getAllTask?id=${cookie.userId}`)

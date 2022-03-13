@@ -54,7 +54,7 @@ const LoginTemplate: React.VFC = () => {
           </GridItem>
           <GridItem colSpan={2} className={styles.gridItem}>
             <Input
-              placeholder="Enter loginId"
+              placeholder="ログインID"
               onChange={(e) => onChengeUserId(e.target.value)}
             ></Input>
           </GridItem>
@@ -67,7 +67,7 @@ const LoginTemplate: React.VFC = () => {
             <InputGroup>
               <Input
                 type={show ? 'text' : 'password'}
-                placeholder="Enter password"
+                placeholder="パスワード"
                 onChange={(e) => onChengePass(e.target.value)}
               ></Input>
               <InputRightElement width="4.5rem">
@@ -85,7 +85,7 @@ const LoginTemplate: React.VFC = () => {
               _focus={{ boxShadow: 'none' }}
               onClick={() => authentication()}
             >
-              Login
+              ログイン
             </Button>
           </GridItem>
           <GridItem colSpan={2} mb="5" mt="5" textAlign="center">

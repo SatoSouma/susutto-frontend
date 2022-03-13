@@ -11,7 +11,7 @@ export function useEmployeeHeader(ctx?: NextPageContext) {
     setCookie(ctx, 'color', '', {
       maxAge: 30 * 24 * 60 * 60,
     });
-    router.replace('/login');
+    router.replace('/');
   }
 
   return [signOut] as const;

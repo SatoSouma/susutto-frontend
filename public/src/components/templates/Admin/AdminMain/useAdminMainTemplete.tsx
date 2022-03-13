@@ -9,7 +9,7 @@ export function useAdminMainTemplete(ctx?: NextPageContext) {
       maxAge: 30 * 24 * 60 * 60,
     });
 
-    router.replace('/login');
+    router.replace('/');
   };
 
   return [signOut] as const;

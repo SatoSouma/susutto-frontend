@@ -44,7 +44,7 @@ const EmployeeHeader: VFC = () => {
       </GridItem>
       <GridItem colSpan={1}>
         <Text color="white" fontSize="2em" fontWeight="bold">
-          TaskList
+          ススット
         </Text>
       </GridItem>
       <GridItem colSpan={1}>
