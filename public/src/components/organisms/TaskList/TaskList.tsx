@@ -99,9 +99,11 @@ const TaskList: VFC = () => {
                   <AdminTaskList
                     key={val.id}
                     id={val.id}
+                    progress={1}
                     taskName={val.taskName}
                     taskDetail={val.taskDetail}
                     deadLine={moment(val.deadLine).format('YYYY/MM/DD HH:mm')}
+                    taskStatus={val.taskStatus}
                     departmentColor={val.departmentColor}
                     departmentName={val.departmentName}
                     employeeName={val.employeeName}
@@ -123,9 +125,11 @@ const TaskList: VFC = () => {
                   <AdminTaskList
                     key={val.id}
                     id={val.id}
+                    progress={2}
                     taskName={val.taskName}
                     taskDetail={val.taskDetail}
                     deadLine={moment(val.deadLine).format('YYYY/MM/DD HH:mm')}
+                    taskStatus={val.taskStatus}
                     departmentColor={val.departmentColor}
                     departmentName={val.departmentName}
                     employeeName={val.employeeName}
@@ -147,9 +151,11 @@ const TaskList: VFC = () => {
                   <AdminTaskList
                     key={val.id}
                     id={val.id}
+                    progress={3}
                     taskName={val.taskName}
                     taskDetail={val.taskDetail}
                     deadLine={moment(val.deadLine).format('YYYY/MM/DD HH:mm')}
+                    taskStatus={val.taskStatus}
                     departmentColor={val.departmentColor}
                     departmentName={val.departmentName}
                     employeeName={val.employeeName}
@@ -171,9 +177,11 @@ const TaskList: VFC = () => {
                   <AdminTaskList
                     key={val.id}
                     id={val.id}
+                    progress={4}
                     taskName={val.taskName}
                     taskDetail={val.taskDetail}
                     deadLine={moment(val.deadLine).format('YYYY/MM/DD HH:mm')}
+                    taskStatus={val.taskStatus}
                     departmentColor={val.departmentColor}
                     departmentName={val.departmentName}
                     employeeName={val.employeeName}

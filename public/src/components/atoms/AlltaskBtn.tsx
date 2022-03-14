@@ -4,7 +4,7 @@ import React, { VFC } from 'react';
 const AllTaskBtn: VFC = () => {
   return (
     <Box>
-      <Text color="white">AllTask</Text>
+      <Text color="white">全ての業務</Text>
     </Box>
   );
 };

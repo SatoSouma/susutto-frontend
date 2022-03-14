@@ -16,6 +16,7 @@ export type adminTaskTypes = {
   taskName: string;
   taskDetail: string;
   deadLine: string;
+  taskStatus: number;
   departmentColor: string;
   departmentName: string;
   employeeName: string | undefined;

@@ -21,7 +21,7 @@ export function useLogin() {
     setPass(e);
   };
 
-  async function authentication(ctx?: NextPageContext) {
+  function authentication(ctx?: NextPageContext) {
     fetch(`${process.env.NEXT_PUBLIC_URL}/login`, {
       method: 'POST',
       body: JSON.stringify({

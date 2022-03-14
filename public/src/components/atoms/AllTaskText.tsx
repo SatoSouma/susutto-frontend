@@ -14,7 +14,7 @@ const AllTaskText: VFC = () => {
         borderTopRightRadius="10px"
         borderTopLeftRadius="10px"
       >
-        AllTask
+        全ての業務
       </Text>
     </>
   );

@@ -16,9 +16,11 @@ export type FixBtnProps = {
 
 export type adminTaskProps = {
   id: number;
+  progress: number;
   taskName: string;
   taskDetail: string;
   deadLine: string;
+  taskStatus: number;
   departmentColor: string;
   departmentName: string;
   employeeName: string | undefined;

@@ -59,14 +59,18 @@ const AdminTaskList: VFC<adminTaskProps> = (props: adminTaskProps) => {
 
             <AccordionPanel pb={4}>
               {props.taskDetail}
-              <FixBtn
-                id={props.id}
-                taskName={props.taskName}
-                taskDetail={props.taskDetail}
-                deadLine={props.deadLine}
-                departmentName={props.departmentName}
-                onClickMove={props.onClickMove}
-              />
+              {props.progress == 3 ? (
+                <FixBtn
+                  id={props.id}
+                  taskName={props.taskName}
+                  taskDetail={props.taskDetail}
+                  deadLine={props.deadLine}
+                  departmentName={props.departmentName}
+                  onClickMove={props.onClickMove}
+                />
+              ) : (
+                <></>
+              )}
             </AccordionPanel>
           </>
         )}

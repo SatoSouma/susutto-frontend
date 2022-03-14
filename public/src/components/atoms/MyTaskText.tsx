@@ -15,7 +15,7 @@ const MyTaskText = () => {
         borderTopRightRadius="10px"
         borderTopLeftRadius="10px"
       >
-        MyTask
+        自分の業務
       </Text>
     </>
   );

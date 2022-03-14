@@ -1,10 +1,12 @@
-import { useSelector } from 'react-redux';
-import { TaskState } from 'public';
+import { useDispatch, useSelector } from 'react-redux';
+import { TaskAction, TaskState } from 'public';
 import { Socket } from 'socket.io-client';
 import { DefaultEventsMap } from 'socket.io/dist/typed-events';
 
 export function useTaskAdd(socket: Socket<DefaultEventsMap, DefaultEventsMap>) {
   const taskState = new TaskState();
+  const taskAction = new TaskAction();
+  const dispatch = useDispatch();
   const taskName = useSelector(taskState.taskName);
   const taskDetail = useSelector(taskState.taskDetail);
   const deadLineDay = useSelector(taskState.deadLineDay);
@@ -43,6 +45,13 @@ export function useTaskAdd(socket: Socket<DefaultEventsMap, DefaultEventsMap>) {
         deadLine: `${deadLineDay} ${deadLineHour}:${deadLineMinutes}`,
         department: department,
       });
+
+      dispatch(taskAction.setTaskName(''));
+      dispatch(taskAction.setDepartment(''));
+      dispatch(taskAction.setTaskDetail(''));
+      dispatch(taskAction.setDeadLineDay(''));
+      dispatch(taskAction.setDeadLineMinutes('00'));
+      dispatch(taskAction.setDeadLineHour('00'));
     }
   };
 

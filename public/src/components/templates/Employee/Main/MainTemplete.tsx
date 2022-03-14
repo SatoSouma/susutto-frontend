@@ -9,17 +9,17 @@ import {
   TaskState,
 } from 'public';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
-
-import { props } from 'types/propsTypes';
 import { useSelector } from 'react-redux';
+import { props } from 'types/propsTypes';
 
 const EmployeeTemplate: VFC<props> = ({ socket }) => {
   const taskState = new TaskState();
   const color = useSelector(taskState.color);
+
   return (
     <Box>
       <EmployeeHeader />
-      <Box h="643">
+      <Box h="650">
         <Tabs isFitted variant="enclosed">
           <TabList boxShadow="lg">
             <Tab
@@ -53,7 +53,6 @@ const EmployeeTemplate: VFC<props> = ({ socket }) => {
           </TabPanels>
         </Tabs>
       </Box>
-
       <EmployeeFooter />
     </Box>
   );

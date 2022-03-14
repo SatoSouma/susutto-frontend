@@ -53,7 +53,7 @@ const AdminLoginTemplate: React.VFC = () => {
           </GridItem>
           <GridItem colSpan={2} className={styles.gridItem}>
             <Input
-              placeholder="Enter loginId"
+              placeholder="ログインID"
               onChange={(e) => onChengeUserId(e.target.value)}
             ></Input>
           </GridItem>
@@ -66,7 +66,7 @@ const AdminLoginTemplate: React.VFC = () => {
             <InputGroup>
               <Input
                 type={show ? 'text' : 'password'}
-                placeholder="Enter password"
+                placeholder="パスワード"
                 onChange={(e) => onChengePass(e.target.value)}
               ></Input>
               <InputRightElement width="4.5rem">
@@ -84,11 +84,11 @@ const AdminLoginTemplate: React.VFC = () => {
               _focus={{ boxShadow: 'none' }}
               onClick={() => authentication()}
             >
-              Login
+              ログイン
             </Button>
           </GridItem>
           <GridItem colSpan={2} mb="5" mt="5" textAlign="center">
-            <Link color="skyBlue.300" href="./login">
+            <Link color="skyBlue.300" href="./">
               一般ログインはこちら
             </Link>
           </GridItem>

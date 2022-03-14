@@ -5,17 +5,6 @@ const HeaderBar: React.VFC = () => {
   return (
     <Box bg="skyBlue.100" h="60px" boxShadow="2xl">
       <Grid templateColumns="repeat(10, 1fr)">
-        <GridItem colSpan={1} textAlign="center">
-          <Button
-            pt="4"
-            bg="skyBlue.100"
-            _active={{ bg: 'skyBlue.100' }}
-            _hover={{ bg: 'skyBlue.100' }}
-            _focus={{ boxShadow: 'none', bg: 'skyBlue.100' }}
-          >
-            <HamburgerIcon size={'5'} color={'white'} />
-          </Button>
-        </GridItem>
         <GridItem colSpan={5} textAlign="left">
           <Input
             placeholder="serch..."
