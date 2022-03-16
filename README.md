@@ -1,34 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ススット(スーパーの業務管理システム)
 
-## Getting Started
+## 作品概要
 
-First, run the development server:
+### 初めに
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- 管理画面と従業員画面があり、管理画面は PC の想定、従業員画面はスマホを想定して作っています。
+- バックエンド、クラウドに関しては[こちら](https://github.com/SatoSouma/susutto-api)に記述してあります。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### この作品を作ろうと思った理由
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- スーパーでアルバイトをしていた時に、業務の伝達漏れや社員間で業務に対して異なる意見を持っていたりと、アルバイトの身として困惑した経験があったのでこのアプリを作ろうと考えました。
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### システムの流れ
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. 管理画面で部署ごとに業務を作成します。
+2. 従業員側で担当したい業務を選択します。
+3. 担当した業務が完了次第完了ボタンをクリックします。
+4. 管理側は`Todo(担当者の決まっていない業務)`・`Doing(現在遂行中の業務)`・`Not archived(期限切れの業務)`・`Done(完了済みの業務)`の項目で大まかな進捗のチェックが可能。
+5. 管理者側で期限切れの業務のみ期限を延長させることが可能。
 
-## Learn More
+### こだわったポイント
 
-To learn more about Next.js, take a look at the following resources:
+- 部署ごとに異なる色を設定し、視覚的に判断しやすくしました。
+- 業務は押しミスを防ぐために、リスト表示されている業務をクリックしてから完了ボタンや修正ボタンを表示させるようにしています。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 使用技術
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### フロントエンド
 
-## Deploy on Vercel
+- Next.js
+  - Redux
+  - TypeScript
+  - ChakraUI
+  - Customhook
+  - sass(レスポンシブの部分でのみ使用)
+- Docker(デプロイしていた時に image 作成用として使っていました、開発環境用の DockerFile、docker-compose はありません)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 改善点・反省点
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### 今後実装したい機能
+
+- 出退勤を管理できようにし、誰が出勤しているかの確認をできるようにしたい。
+- 業務を作成するタイミングで、出勤中の特定の社員に対し業務を課せられるようにしたい。
+- 業務の優先度を設定できるようにしたい。
+- スーパーは天気によって業務内容が大きく異なるので、天気の情報を逐一確認または知らせてくれるようにしたい。
+
+#### 技術的な反省点
+
+- 今回コンポーネントのディレクトリ構成として`AtomicDesign`を採用しましたが、うまく分けられた自信がないので研究を進めていきたい。
+- UI についてまだまだ追求不足であるので、もっと使用者の気持ちになって考えたい。
