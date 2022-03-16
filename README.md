@@ -24,7 +24,7 @@
 - 部署ごとに異なる色を設定し、視覚的に判断しやすくしました。
 - 業務は押しミスを防ぐために、リスト表示されている業務をクリックしてから完了ボタンや修正ボタンを表示させるようにしています。
 
-### Demo
+### デモ
 
 - [デモ画面](https://drive.google.com/file/d/15qjlGJzTaRax3B_WiizJqUlqoi5uCykV/view?usp=sharing)← こちらに説明動画がございます。
 
