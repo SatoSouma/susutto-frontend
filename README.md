@@ -37,6 +37,7 @@
   - TypeScript
   - ChakraUI
   - Customhook
+  - socket
   - sass(レスポンシブの部分でのみ使用)
 - Docker(デプロイしていた時に image 作成用として使っていました、開発環境用の DockerFile、docker-compose はありません)
 
