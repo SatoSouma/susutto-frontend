@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { parseCookies } from 'nookies';
 import { NextPageContext, NextPage } from 'next';
-import { MainTemplete, TaskAction } from 'public';
+import { MainTemplete, TaskAction } from 'src';
 import io from 'socket.io-client';
 import Head from 'next/head';
 import { useDispatch } from 'react-redux';

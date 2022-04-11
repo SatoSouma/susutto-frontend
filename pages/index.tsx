@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { LoginTemplate } from 'public';
+import { LoginTemplate } from 'src';
 import Head from 'next/head';
 
 const Home: NextPage = ({}) => {

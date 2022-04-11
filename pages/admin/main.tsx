@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { NextPage, NextPageContext } from 'next';
 import Head from 'next/head';
-import { NextRouter, useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { parseCookies } from 'nookies';
-import { AdminMainTemplete, TaskAction } from 'public';
+import { AdminMainTemplete, TaskAction } from 'src';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { io } from 'socket.io-client';
