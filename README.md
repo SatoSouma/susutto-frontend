@@ -32,7 +32,8 @@
 
 #### フロントエンド
 
-- Next.js
+- JavaScript
+- Next.js ver12.0.7
   - Redux
   - TypeScript
   - ChakraUI
@@ -40,6 +41,11 @@
   - socket
   - sass(レスポンシブの部分でのみ使用)
 - Docker(デプロイしていた時に image 作成用として使っていました、開発環境用の DockerFile、docker-compose はありません)
+
+### 動作環境
+
+- Chrome ver99.0.4844.84 で動作確認済み
+- Mac ver11.6.4 で動作確認済み
 
 ### 改善点・反省点
 
